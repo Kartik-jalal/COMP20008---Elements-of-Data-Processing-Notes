@@ -1,0 +1,107 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COMP20008 - Regression Analysis, Decision Trees & k-NN: Exam Notes</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; }
+        h2 { color: #2c3e50; }
+        p { margin-bottom: 1em; }
+        ul { margin-left: 20px; }
+        li { margin-bottom: 0.5em; }
+        .formula { background-color: #f4f4f4; padding: 10px; margin-bottom: 1em; }
+    </style>
+</head>
+<body>
+    <h1>COMP20008 - Regression Analysis, Decision Trees & k-NN: Exam Notes</h1>
+
+    <h2>Correlation vs. Regression</h2>
+    <p><strong>Correlation:</strong> Measures the strength and direction of the relationship between two variables. No causal relationship is implied.</p>
+    <p><strong>Regression Analysis:</strong> Used to predict the value of a dependent variable based on one or more independent variables, providing insight into their relationship.</p>
+    
+    <h2>Simple Linear Regression Example</h2>
+    <p>A real estate agent wishes to examine the relationship between the selling price of a home (Y) and its size (X, measured in square feet):</p>
+    <ul>
+        <li><strong>Dependent Variable (Y):</strong> House price in $1000s.</li>
+        <li><strong>Independent Variable (X):</strong> Size in square feet.</li>
+    </ul>
+    <p>Using the least squares method, the line of best fit can be calculated:</p>
+    <div class="formula">Y = b<sub>0</sub> + b<sub>1</sub>X</div>
+    <p>Where:</p>
+    <ul>
+        <li><strong>b<sub>0</sub>:</strong> Intercept of the line.</li>
+        <li><strong>b<sub>1</sub>:</strong> Slope of the line (rate of change of Y with respect to X).</li>
+    </ul>
+    
+    <h2>Measures of Variation</h2>
+    <p>Total variation in regression analysis is represented as:</p>
+    <div class="formula">SST = SSR + SSE</div>
+    <ul>
+        <li><strong>SST (Total Sum of Squares):</strong> Total variation in Y.</li>
+        <li><strong>SSR (Regression Sum of Squares):</strong> Variation explained by the regression model.</li>
+        <li><strong>SSE (Error Sum of Squares):</strong> Unexplained variation.</li>
+    </ul>
+    <p><strong>R-Squared (R<sup>2</sup>):</strong> Represents the proportion of variation explained by the model:</p>
+    <div class="formula">R<sup>2</sup> = SSR / SST</div>
+
+    <h2>Multiple Linear Regression</h2>
+    <p><strong>Multiple Linear Regression:</strong> Extends simple linear regression to include multiple independent variables:</p>
+    <div class="formula">Y = b<sub>0</sub> + b<sub>1</sub>X<sub>1</sub> + b<sub>2</sub>X<sub>2</sub> + ... + b<sub>n</sub>X<sub>n</sub></div>
+    <p>This model helps to predict the dependent variable based on multiple features, improving accuracy.</p>
+
+    <h2>Decision Trees</h2>
+    <p>Decision trees are a model that splits data based on feature values to make decisions:</p>
+    <ul>
+        <li><strong>Splitting Criteria:</strong> At each node, a feature is chosen to split the data based on a measure like information gain.</li>
+        <li><strong>Leaf Node:</strong> Represents a decision or classification outcome.</li>
+    </ul>
+    <p>For example, determining if a customer will receive a refund based on marital status and income level.</p>
+
+    <h2>Hunt's Algorithm for Decision Trees</h2>
+    <p><strong>General Structure:</strong></p>
+    <ul>
+        <li>If all records belong to the same class, the node is labeled as a leaf.</li>
+        <li>If records belong to different classes, split the data using an attribute test and apply the procedure recursively.</li>
+    </ul>
+
+    <h2>Information Gain for Splitting</h2>
+    <p>Information gain is used to determine the best attribute to split the data:</p>
+    <ul>
+        <li><strong>Information Gain:</strong> Measures the reduction in entropy after the split.</li>
+        <li>Splitting using the attribute with the highest information gain ensures that the maximum information is obtained about the class variable.</li>
+    </ul>
+
+    <h2>Distance Measures & k-Nearest Neighbors (k-NN)</h2>
+    <p><strong>Euclidean Distance:</strong> A common distance measure to determine the distance between two points p and q:</p>
+    <div class="formula">d(p, q) = √[(p<sub>1</sub> - q<sub>1</sub>)<sup>2</sup> + (p<sub>2</sub> - q<sub>2</sub>)<sup>2</sup> + ...]</div>
+    <p><strong>k-NN Classification:</strong> Classify a point based on the majority class of its k-nearest neighbors. Weights can be assigned to neighbors based on their distances (e.g., weight = 1/distance<sup>2</sup>).</p>
+    <p><strong>Voronoi Diagram:</strong> Defines classification boundaries for a 1-nearest neighbor approach.</p>
+
+    <h2>Evaluation Methods for Supervised Learning</h2>
+    <p><strong>Bootstrap Validation:</strong> A method relying on smaller samples drawn randomly from the original dataset with replacement. The remaining data points, known as out-of-bag (OOB) data, serve as validation data.</p>
+    <p><strong>Precision:</strong> Measures the agreement of the true class labels with those of the classifier:</p>
+    <div class="formula">Precision = TP / (TP + FP)</div>
+    <p>Used when false positives should be minimized, e.g., avoiding putting innocent people in prison.</p>
+    <p><strong>F1 Score:</strong> The harmonic mean of precision and recall:</p>
+    <div class="formula">F1 = 2 × (Precision × Recall) / (Precision + Recall)</div>
+
+    <h2>Regression Metrics</h2>
+    <p><strong>Root Mean Square Error (RMSE):</strong> Measures the average magnitude of the error:</p>
+    <div class="formula">RMSE = √[∑ (Y<sub>i</sub> - Ŷ<sub>i</sub>)² / N]</div>
+    <p><strong>Mean Absolute Error (MAE):</strong> Measures the average magnitude of the errors in a set of predictions:</p>
+    <div class="formula">MAE = (1/N) ∑ |Y<sub>i</sub> - Ŷ<sub>i</sub>|</div>
+    <p>Lower values indicate better model performance.</p>
+
+    <h2>Feature Selection</h2>
+    <p><strong>Wrapper Methods:</strong> Train and evaluate a model on different subsets of attributes, selecting the subset that yields the best performance. Disadvantages include being time-consuming and only practical for a limited number of features.</p>
+    <p><strong>Chi-Square Feature Filtering:</strong> Used to evaluate the independence of features from the output class. Features that are independent of the class are removed:</p>
+    <ul>
+        <li><strong>Null Hypothesis (H<sub>0</sub>):</strong> Two variables are independent.</li>
+        <li>Chi-square test considers sample size and performs a significance test.</li>
+    </ul>
+
+    <p>Continue to the next part of the notes for further exploration of regression, decision trees, evaluation methods, and feature selection techniques.</p>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COMP20008 - Data Linkage, Hashing & Mutual Information: Exam Notes</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; }
+        h2 { color: #2c3e50; }
+        p { margin-bottom: 1em; }
+        ul { margin-left: 20px; }
+        li { margin-bottom: 0.5em; }
+        .formula { background-color: #f4f4f4; padding: 10px; margin-bottom: 1em; }
+    </style>
+</head>
+<body>
+    <h1>COMP20008 - Data Linkage, Hashing & Mutual Information: Exam Notes</h1>
+
+    <h2>Text Processing & Data Linkage</h2>
+    <p><strong>Text Processing:</strong> Techniques used to clean and prepare text data for analysis, including tokenization, stemming, and lemmatization.</p>
+    <ul>
+        <li><strong>Tokenization:</strong> Splitting text into smaller units called tokens (e.g., words or sentences).</li>
+        <li><strong>Stemming:</strong> Reducing words to their root form (e.g., "running" to "run").</li>
+        <li><strong>Lemmatization:</strong> Similar to stemming but ensures that the root word is a valid word (e.g., "better" to "good").</li>
+    </ul>
+    <p><strong>Data Linkage:</strong> The process of combining records from different sources that refer to the same entity.</p>
+    <ul>
+        <li><strong>Blocking Techniques:</strong> Used to reduce the number of comparisons in record linkage by grouping similar records together.
+            <ul>
+                <li><strong>Example:</strong> Blocking by first letter of the last name when linking customer records from different databases.</li>
+            </ul>
+        </li>
+        <li><strong>Matching Metrics:</strong> Common metrics include Jaccard similarity and Levenshtein distance for comparing text fields.</li>
+    </ul>
+
+    <h2>Data Linkage, Hashing & Sales Prediction</h2>
+    <p><strong>Hashing:</strong> A technique used to map data of arbitrary size to fixed-size values, often for indexing or privacy-preserving linkage.</p>
+    <ul>
+        <li><strong>Hash Functions:</strong> Functions that take an input and return a fixed-size string of bytes.
+            <div class="formula">H(X) = hashed value of X</div>
+            <ul>
+                <li><strong>Example:</strong> MD5 and SHA-256 are common hash functions used in cryptography.</li>
+            </ul>
+        </li>
+        <li><strong>Privacy-Preserving Linkage:</strong> Hashing with salts can be used to protect sensitive data while linking records between organizations.
+            <ul>
+                <li><strong>Salt:</strong> A random value added to the data before hashing to ensure unique hash outputs for identical inputs.</li>
+            </ul>
+        </li>
+    </ul>
+    <p><strong>Sales Prediction:</strong> Predicting sales using historical data and identifying factors that influence sales.</p>
+    <ul>
+        <li><strong>Correlation Analysis:</strong> Identifying relationships between sales and factors such as holidays, promotions, or weather.</li>
+        <li><strong>Example:</strong> Using linear regression to predict sales based on advertising spend.</li>
+    </ul>
+
+    <h2>Mutual Information, Entropy & Correlation</h2>
+    <p><strong>Entropy (H):</strong> A measure of uncertainty or randomness in a random variable.</p>
+    <ul>
+        <li><strong>Formula:</strong>
+            <div class="formula">H(X) = -∑ p<sub>i</sub> log(p<sub>i</sub>)</div>
+            <ul>
+                <li><strong>Example:</strong> Calculating the entropy of a fair coin toss, where p(heads) = 0.5 and p(tails) = 0.5:</li>
+                <div class="formula">H(X) = -[0.5 log(0.5) + 0.5 log(0.5)] = 1 bit</div>
+            </ul>
+        </li>
+    </ul>
+    <p><strong>Mutual Information (MI):</strong> A measure of the amount of information obtained about one random variable through another random variable.</p>
+    <ul>
+        <li><strong>Properties:</strong>
+            <ul>
+                <li><strong>MI(X, Y) &gt; 0:</strong> X and Y share information.</li>
+                <li><strong>MI(X, Y) = 0:</strong> X and Y are independent.</li>
+            </ul>
+        </li>
+        <li><strong>Example:</strong> Mutual information can be used to determine the relevance of features in a dataset for predicting a target variable.</li>
+    </ul>
+    <p><strong>Pearson Correlation (r):</strong> A measure of linear correlation between two variables X and Y.</p>
+    <ul>
+        <li><strong>Formula:</strong>
+            <div class="formula">r(X, Y) = ∑ [(X<sub>i</sub> - X̄)(Y<sub>i</sub> - Ŷ)] / [n * σ<sub>X</sub> * σ<sub>Y</sub>]</div>
+        </li>
+        <li><strong>Range:</strong> -1 ≤ r ≤ 1
+            <ul>
+                <li><strong>r = 1:</strong> Perfect positive correlation.</li>
+                <li><strong>r = -1:</strong> Perfect negative correlation.</li>
+                <li><strong>r = 0:</strong> No correlation.</li>
+            </ul>
+        </li>
+    </ul>
+
+    <p>Continue to the next part of the notes for further exploration of data linkage, hashing techniques, and information theory metrics.</p>
+</body>
+</html>

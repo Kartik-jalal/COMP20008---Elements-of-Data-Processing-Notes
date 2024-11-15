@@ -1,0 +1,113 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COMP20008 - Data Visualization & Handling Techniques: Exam Notes</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; }
+        h2 { color: #2c3e50; }
+        p { margin-bottom: 1em; }
+        ul { margin-left: 20px; }
+        li { margin-bottom: 0.5em; }
+    </style>
+</head>
+<body>
+    <h1>COMP20008 - Data Visualization & Handling Techniques: Exam Notes</h1>
+
+    <h2>Scatter Plots & Advanced Scatter Plot Techniques</h2>
+    <ul>
+        <li><strong>Scatter Plots:</strong> Used to visualize the relationship between two numerical variables.</li>
+        <li><strong>Bubble Plots:</strong> Represent three-dimensional data by varying the size of data points.</li>
+        <li><strong>Enhanced Scatter Plots:</strong> Use color to represent a third variable, adding more depth to the data representation.</li>
+    </ul>
+
+    <h2>Heat Maps</h2>
+    <ul>
+        <li><strong>Definition:</strong> Visualize a data matrix where individual values are represented using colors.</li>
+        <li><strong>Use Case:</strong> Often used when data objects are sorted by class or type to show differences.</li>
+        <li><strong>Normalization:</strong> Normalizing features is crucial to prevent one feature from dominating the visualization.</li>
+    </ul>
+
+    <h2>Axes Scaling & Parallel Coordinates</h2>
+    <ul>
+        <li><strong>Axes Scaling:</strong> Scaling features helps achieve better visual balance, especially in parallel coordinates.</li>
+        <li><strong>Parallel Coordinates:</strong> Used to visualize multivariate data; the ordering of axes can reveal specific correlations between features.</li>
+    </ul>
+
+    <h2>Handling Missing Data</h2>
+    <ul>
+        <li><strong>Types of Missing Data:</strong>
+            <ul>
+                <li><strong>MCAR:</strong> Missing Completely at Random - missingness is unrelated to any data.</li>
+                <li><strong>MAR:</strong> Missing at Random - missingness is related to observed data.</li>
+                <li><strong>MNAR:</strong> Missing Not at Random - missingness is related to the missing data itself.</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h2>Disguised Missing Data</h2>
+    <ul>
+        <li><strong>Definition:</strong> Missing data that appears as suspicious or placeholder values (e.g., "xx@xx.com").</li>
+        <li><strong>Example:</strong> Incorrect postal code used in a rental system due to an incompatible field.</li>
+        <li><strong>Handling:</strong> Use domain knowledge to identify and rectify unusual values.</li>
+    </ul>
+
+    <h2>Relational Databases & SQL</h2>
+    <ul>
+        <li><strong>Relational Database:</strong> Stores data in tables linked by relationships (e.g., student records).</li>
+        <li><strong>SQL:</strong> Structured Query Language, used to interact with relational databases to retrieve, update, and manage data.</li>
+    </ul>
+
+    <h2>Semi-Structured Data</h2>
+    <ul>
+        <li><strong>CSV:</strong> Comma-separated values, used for storing tabular information in a simple text format.</li>
+        <li><strong>HTML:</strong> Markup language used to define content structure, often considered semi-structured data.</li>
+    </ul>
+
+    <h2>XML Syntax & CDATA</h2>
+    <ul>
+        <li><strong>XML Syntax:</strong> XML preserves white spaces and uses special characters like '&lt;' and '&amp;'.</li>
+        <li><strong>CDATA:</strong> CDATA sections can be used to include large blocks of text containing special characters.</li>
+        <li><strong>Example:</strong> To include '&' in XML, use '&amp;' or wrap the text in CDATA.</li>
+    </ul>
+
+    <h2>JSON vs. XML</h2>
+    <ul>
+        <li><strong>JSON:</strong> A lightweight data-interchange format, simpler and easier to parse compared to XML.</li>
+        <li><strong>Python Libraries:</strong> Libraries like <code>json</code> and <code>lxml</code> can be used to handle JSON and XML data.</li>
+        <li><strong>Example:</strong> JSON is often used in web APIs due to its simplicity.</li>
+    </ul>
+
+    <h2>PDF Data Extraction</h2>
+    <ul>
+        <li><strong>Tools:</strong> Libraries like PDFMiner can be used to extract text from PDFs.</li>
+        <li><strong>Challenge:</strong> Converting PDFs to text may result in the loss of formatting, making data extraction challenging.</li>
+        <li><strong>Example:</strong> Extracting tables from PDFs often requires additional processing to retain the structure.</li>
+    </ul>
+
+    <h2>String Similarity & Edit Distance</h2>
+    <ul>
+        <li><strong>Edit Distance:</strong> Measures the number of operations required to transform one string into another (e.g., insert, delete, replace).</li>
+        <li><strong>Levenshtein Distance:</strong> A common edit distance metric used for comparing strings.</li>
+        <li><strong>Example:</strong> Transforming "kitten" to "sitting" requires three edits: replace 'k' with 's', add 'i', and add 'g'.</li>
+    </ul>
+
+    <h2>N-gram Distance</h2>
+    <ul>
+        <li><strong>N-grams:</strong> Substrings of length 'n' used for approximate string matching.</li>
+        <li><strong>Use Case:</strong> N-grams are useful for detecting similarities between text by comparing overlapping sequences.</li>
+        <li><strong>Example:</strong> Bi-grams of the word "data" are "da", "at", and "ta".</li>
+    </ul>
+
+    <h2>Pattern Matching with Regular Expressions</h2>
+    <ul>
+        <li><strong>Regular Expressions (Regex):</strong> Used to search and manipulate text based on patterns.</li>
+        <li><strong>Anchoring:</strong> Use '^' to match the start of a string and '$' to match the end.</li>
+        <li><strong>Example:</strong> The pattern '^data' will match any string that starts with "data".</li>
+    </ul>
+
+    <p>Continue to the next part of the notes for more advanced data processing techniques and applications.</p>
+</body>
+</html>

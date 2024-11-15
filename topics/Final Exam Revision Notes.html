@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COMP20008 - Final Exam Revision Notes</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; }
+        h2 { color: #2c3e50; }
+        p { margin-bottom: 1em; }
+        ul { margin-left: 20px; }
+        li { margin-bottom: 0.5em; }
+        .formula { background-color: #f4f4f4; padding: 10px; margin-bottom: 1em; }
+        .example { background-color: #e8f4e8; padding: 10px; margin-bottom: 1em; }
+    </style>
+</head>
+<body>
+    <h1>COMP20008 - Final Exam Revision Notes</h1>
+
+    <h2>Data Wrangling & Handling</h2>
+    <p><strong>Data Wrangling:</strong> Transforming raw data into a more usable format by cleaning, normalizing, and handling missing values.</p>
+    <ul>
+        <li><strong>Handling Missing Values:</strong> Imputation (e.g., using mean, median) or deletion.</li>
+        <li><strong>Normalization:</strong> Scaling data to a common range (e.g., Min-Max Scaling):
+            <div class="formula">X<sub>scaled</sub> = (X - X<sub>min</sub>) / (X<sub>max</sub> - X<sub>min</sub>)</div>
+        </li>
+    </ul>
+
+    <h2>Text Processing & Data Linkage</h2>
+    <p><strong>Text Processing:</strong> Techniques such as tokenization, stemming, and lemmatization to prepare text data for analysis.</p>
+    <p><strong>Data Linkage:</strong> Combining records that refer to the same entity from different datasets using <strong>blocking techniques</strong> and <strong>matching metrics</strong> (e.g., Jaccard similarity).</p>
+    <div class="example"><strong>Example:</strong> Linking customer records by blocking on the first letter of the last name.</div>
+
+    <h2>Hashing & Privacy-Preserving Techniques</h2>
+    <p><strong>Hashing:</strong> Maps data to fixed-size values for indexing or privacy-preserving linkage.
+        <div class="formula">H(X) = hashed value of X</div>
+    </p>
+    <ul>
+        <li><strong>Privacy-Preserving Linkage:</strong> Using hashing with salts to ensure unique outputs.
+            <div class="example"><strong>Example:</strong> Hashing names with a salt before linking records between organizations.</div>
+        </li>
+    </ul>
+
+    <h2>Regression Analysis</h2>
+    <p><strong>Simple Linear Regression:</strong> Models the relationship between a dependent variable (Y) and an independent variable (X).</p>
+    <div class="formula">Y = b<sub>0</sub> + b<sub>1</sub>X</div>
+    <div class="example"><strong>Example:</strong> Predicting house prices based on square footage.</div>
+    <p><strong>Multiple Linear Regression:</strong> Extends to multiple independent variables.</p>
+    <div class="formula">Y = b<sub>0</sub> + b<sub>1</sub>X<sub>1</sub> + b<sub>2</sub>X<sub>2</sub> + ... + b<sub>n</sub>X<sub>n</sub></div>
+
+    <h2>Decision Trees</h2>
+    <p><strong>Decision Trees:</strong> Used for classification or regression by splitting data based on feature values.</p>
+    <ul>
+        <li><strong>Splitting Criteria:</strong> Information gain or Gini impurity.</li>
+    </ul>
+    <div class="example"><strong>Example:</strong> Predicting whether a customer will buy a product based on age and income.</div>
+
+    <h2>Clustering Techniques</h2>
+    <p><strong>K-means Clustering:</strong> Partitions data into K clusters by minimizing intra-cluster variance.</p>
+    <ul>
+        <li><strong>Steps:</strong> Initialize centroids, assign points, recalculate centroids, repeat until convergence.</li>
+        <li><strong>Elbow Method:</strong> Determines optimal K by plotting SSE against K.</li>
+    </ul>
+    <div class="example"><strong>Example:</strong> Segmenting customers based on purchasing behavior.</div>
+    <p><strong>Hierarchical Clustering:</strong> Builds a dendrogram to represent nested clusters.</p>
+    <ul>
+        <li><strong>Agglomerative:</strong> Merge clusters iteratively.</li>
+        <li><strong>Divisive:</strong> Split clusters iteratively.</li>
+    </ul>
+
+    <h2>Dimensionality Reduction</h2>
+    <p><strong>Principal Component Analysis (PCA):</strong> Projects data onto a lower-dimensional space while retaining variance.</p>
+    <div class="example"><strong>Use Case:</strong> Reducing high-dimensional data for visualization.</div>
+
+    <h2>Mutual Information, Entropy & Correlation</h2>
+    <p><strong>Entropy (H):</strong> Measures uncertainty in a random variable.</p>
+    <div class="formula">H(X) = -∑ p<sub>i</sub> log(p<sub>i</sub>)</div>
+    <div class="example"><strong>Example:</strong> Entropy of a fair coin toss is 1 bit.</div>
+    <p><strong>Mutual Information (MI):</strong> Measures shared information between two variables.</p>
+    <p><strong>Pearson Correlation (r):</strong> Measures linear correlation between two variables.</p>
+    <div class="formula">r(X, Y) = ∑ [(X<sub>i</sub> - X̄)(Y<sub>i</sub> - Ŷ)] / [n * σ<sub>X</sub> * σ<sub>Y</sub>]</div>
+    <ul>
+        <li><strong>Range:</strong> -1 ≤ r ≤ 1</li>
+    </ul>
+
+    <h2>Recommender Systems & Privacy</h2>
+    <p><strong>Recommender Systems:</strong> Suggest items to users based on preferences or similarities.</p>
+    <ul>
+        <li><strong>Item-Based Collaborative Filtering:</strong> Recommends items similar to those liked by the user.</li>
+        <li><strong>User-Based Collaborative Filtering:</strong> Recommends items based on similar users' preferences.</li>
+    </ul>
+    <div class="example"><strong>Example:</strong> Suggesting movies to users based on their watch history.</div>
+    <p><strong>Privacy Concerns:</strong> Anonymization and de-anonymization risks when handling user data for recommendations.</p>
+
+    <h2>Summary</h2>
+    <p>These notes cover key topics such as data wrangling, regression analysis, clustering, dimensionality reduction, recommender systems, and privacy concerns. Use the examples, formulas, and explanations provided to solidify your understanding before the exam. Focus on understanding the concepts and their practical applications, as well as the relationships between different machine learning techniques.</p>
+</body>
+</html>

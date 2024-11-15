@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COMP20008 - Entropy and Mutual Information Calculation</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; }
+        h2 { color: #2c3e50; }
+        p { margin-bottom: 1em; }
+        ul { margin-left: 20px; }
+        li { margin-bottom: 0.5em; }
+        .example { background-color: #e8f4e8; padding: 10px; margin-bottom: 1em; }
+        .formula { background-color: #f4f4f4; padding: 10px; margin-bottom: 1em; font-family: monospace; }
+    </style>
+</head>
+<body>
+    <h1>COMP20008 - Entropy and Mutual Information Calculation</h1>
+
+    <h2>Question 10: Entropy and Mutual Information</h2>
+    <p><strong>Question:</strong> Consider a dataset with 2 attributes A and B. Possible values for A are 1, 2 and possible values for B are 3, 4.</p>
+    <div class="example">
+        <p><strong>A:</strong> [2, 1, 1, 1, 1, 1, 1, 1, 2, 1]</p>
+        <p><strong>B:</strong> [3, 3, 3, 3, 4, 3, 3, 4, 4, 3]</p>
+    </div>
+    <p>Using base 2 logarithm, answer the following:</p>
+    <ol>
+        <li>Calculate the entropy of A and of B [2 marks]</li>
+        <li>Calculate the mutual information between A and B [1 mark]</li>
+        <li>Give a different B so that mutual information between A and B becomes 0 [1 mark]</li>
+    </ol>
+
+    <h3>Step-by-Step Solution:</h3>
+
+    <h4>Part (a): Calculate the Entropy of A and B</h4>
+    <p>Entropy is calculated using the formula:</p>
+    <div class="formula">H(X) = -∑ p(x) * log<sub>2</sub>(p(x))</div>
+    <p>Where <code>p(x)</code> is the probability of each unique value in the dataset.</p>
+
+    <h4>Entropy of A:</h4>
+    <ul>
+        <li>Values of A: [1, 2]</li>
+        <li>Frequency of 1: 8 times, Frequency of 2: 2 times</li>
+        <li>Probability of 1: <code>p(1) = 8/10 = 0.8</code></li>
+        <li>Probability of 2: <code>p(2) = 2/10 = 0.2</code></li>
+    </ul>
+    <div class="formula">
+        H(A) = - (0.8 * log<sub>2</sub>(0.8) + 0.2 * log<sub>2</sub>(0.2))<br>
+        H(A) = - (0.8 * -0.32193 + 0.2 * -2.32193)<br>
+        H(A) = 0.72
+    </div>
+
+    <h4>Entropy of B:</h4>
+    <ul>
+        <li>Values of B: [3, 4]</li>
+        <li>Frequency of 3: 7 times, Frequency of 4: 3 times</li>
+        <li>Probability of 3: <code>p(3) = 7/10 = 0.7</code></li>
+        <li>Probability of 4: <code>p(4) = 3/10 = 0.3</code></li>
+    </ul>
+    <div class="formula">
+        H(B) = - (0.7 * log<sub>2</sub>(0.7) + 0.3 * log<sub>2</sub>(0.3))<br>
+        H(B) = - (0.7 * -0.51457 + 0.3 * -1.73697)<br>
+        H(B) = 0.88
+    </div>
+
+    <h4>Part (b): Calculate the Mutual Information (MI) Between A and B</h4>
+    <p>Mutual Information is calculated using the formula:</p>
+    <div class="formula">MI(A; B) = H(B) - H(B|A)</div>
+    <p>Where <code>H(B|A)</code> is the conditional entropy of B given A.</p>
+    <div class="formula">
+        H(B|A) = 0.2 * (-0.5 * log<sub>2</sub>(0.5) - 0.5 * log<sub>2</sub>(0.5)) + 0.8 * (-0.75 * log<sub>2</sub>(0.75) - 0.25 * log<sub>2</sub>(0.25))<br>
+        = 0.2 * 1 + 0.8 * 0.81<br>
+        = 0.2 + 0.65 = 0.85
+    </div>
+    <div class="formula">
+        MI = H(B) - H(B|A) = 0.88 - 0.85 = 0.03
+    </div>
+
+    <h4>Part (c): Create a Different B So that MI(A; B) = 0</h4>
+    <p>To make the mutual information equal to 0, the values of B must be independent of A. In other words, there should be no pattern or correlation between A and B.</p>
+    <div class="example">
+        <strong>Example:</strong>
+        <p>A = [2, 1, 1, 1, 1, 1, 1, 1, 2, 1]</p>
+        <p>B = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3]</p>
+        <p>In this case, B has the same value throughout, which means there is no dependency between A and B, resulting in MI = 0.</p>
+    </div>
+
+    <h2>Practice Question 1</h2>
+    <p><strong>Explain why entropy is important in measuring the uncertainty of a variable.</strong></p>
+    <ul>
+        <li>Entropy helps determine the unpredictability of a dataset.</li>
+        <li>A higher entropy value indicates greater uncertainty.</li>
+        <li>It is used in information theory to quantify the amount of information.</li>
+    </ul>
+    <p><strong>Correct Answer:</strong> Entropy is a measure of the unpredictability or randomness of a dataset. It quantifies the uncertainty involved in predicting the value of a random variable.</p>
+
+    <h2>Practice Question 2</h2>
+    <p><strong>What does a mutual information value of 0 imply about two variables?</strong></p>
+    <ul>
+        <li>They are highly correlated.</li>
+        <li>They are independent of each other.</li>
+        <li>One variable is a subset of the other.</li>
+        <li>They have maximum entropy.</li>
+    </ul>
+    <p><strong>Correct Answer:</strong> They are independent of each other.</p>
+    <div class="example">
+        <strong>Explanation:</strong> A mutual information value of 0 means that knowing the value of one variable does not provide any information about the other variable, indicating independence.</div>
+
+</body>
+</html>

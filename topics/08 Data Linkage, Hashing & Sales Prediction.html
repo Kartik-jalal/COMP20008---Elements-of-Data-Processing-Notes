@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COMP20008 - Data Linkage, Hashing & Sales Prediction: Exam Notes</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; }
+        h2 { color: #2c3e50; }
+        p { margin-bottom: 1em; }
+        ul { margin-left: 20px; }
+        li { margin-bottom: 0.5em; }
+        .formula { background-color: #f4f4f4; padding: 10px; margin-bottom: 1em; }
+    </style>
+</head>
+<body>
+    <h1>COMP20008 - Data Linkage, Hashing & Sales Prediction: Exam Notes</h1>
+
+    <h2>Blocking Techniques for Data Linkage</h2>
+    <p>Blocking is used to reduce the number of comparisons needed for record linkage:</p>
+    <ul>
+        <li><strong>Blocking by Release Year:</strong> Grouping movies by release year (e.g., "2016").</li>
+        <li><strong>Blocking by Concatenation:</strong> Concatenating attributes like "release year" and a title word (e.g., "2016 ghost").</li>
+        <li><strong>Handling Redundancies:</strong> Using multiple functions (e.g., year, year+1, year-1) can lead to redundant blocks.</li>
+    </ul>
+    <p><strong>Example:</strong> A movie record "ghost busters, 2016" may be blocked by "2015", "2016", and "2017" to handle potential mismatches.</p>
+
+    <h2>Matching & Merging Records</h2>
+    <ul>
+        <li><strong>Threshold for Matching:</strong> Records are matched if their similarity score exceeds a threshold (e.g., θ = 0.5).</li>
+        <li><strong>Handling Conflicting Attributes:</strong> Merging records may require resolving conflicts, such as different values for the same attribute.</li>
+        <li><strong>False Positives & Negatives:</strong> Matching systems may still produce errors.</li>
+    </ul>
+    <p><strong>Example:</strong> Two movie records may be matched if their similarity score is above 0.5, but manual inspection may still be needed for confirmation.</p>
+
+    <h2>Hash Functions</h2>
+    <p>Hashing is used to map data items of arbitrary size to a fixed size:</p>
+    <ul>
+        <li><strong>Hash Function (H):</strong> A function that takes an input and returns a fixed-size value.
+            <div class="formula">H(X) = hashed value of X</div>
+        </li>
+        <li><strong>Non-Invertible Hash Functions:</strong> These are one-way functions, meaning that given H(X), it is extremely hard to reconstruct X.
+            <ul>
+                <li><strong>Example:</strong> MD5 hash function produces a 32-digit hexadecimal hash.</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h2>Privacy-Preserving Exact Match Schemes</h2>
+    <ul>
+        <li><strong>Trusted Third Party:</strong> Organisations A and B use a trusted third party (C) to determine matches between records.</li>
+        <li><strong>Hashing with Salt:</strong> One-way hash functions with a salt are used to increase privacy.</li>
+        <li><strong>Adding Random Records:</strong> Dummy records are added to prevent frequency attacks.</li>
+    </ul>
+    <p><strong>Example:</strong> Organisations A and B hash their records with a shared salt and add dummy records before sending them to C for matching.</p>
+
+    <h2>Bloom Filters in Record Linkage</h2>
+    <p>Bloom filters are used to represent sets for privacy-preserving record linkage:</p>
+    <ul>
+        <li><strong>Bit Array Length (l) and Hash Functions (k):</strong> A and B agree on these parameters to create Bloom filters.</li>
+        <li><strong>Dummy Records:</strong> Added to reduce the chances of a frequency attack by the third party.</li>
+        <li><strong>Challenges:</strong> Bloom filters are not very secure for short strings due to collisions.</li>
+    </ul>
+
+    <h2>Non-Linear Correlation Example</h2>
+    <p>Correlation does not always imply linear relationships:</p>
+    <ul>
+        <li><strong>Example:</strong> It gets so hot that people stop going to the shop, causing sales to drop. This is an example of non-linear correlation.</li>
+    </ul>
+    <p>For more information, refer to: <a href="https://www.mathsisfun.com/data/correlation.html" target="_blank">Math is Fun - Correlation</a>.</p>
+
+    <h2>Sales Prediction Example</h2>
+    <p>Factors influencing sales can be identified to improve prediction models:</p>
+    <ul>
+        <li><strong>Correlations:</strong> Sales can be influenced by factors like holidays, day of the week, distance to competitors, and average income in the area.</li>
+        <li><strong>Example:</strong> A dataset from Kaggle on Rossmann store sales can be used to explore these correlations and develop prediction models.</li>
+    </ul>
+    <p>For more information, visit: <a href="https://www.kaggle.com/c/rossmann-store-sales/data" target="_blank">Rossmann Store Sales on Kaggle</a>.</p>
+
+    <p>Continue to the next part of the notes for further exploration of data linkage, hashing, and prediction techniques.</p>
+</body>
+</html>

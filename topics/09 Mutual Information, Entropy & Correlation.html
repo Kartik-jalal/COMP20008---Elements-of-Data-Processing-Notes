@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COMP20008 - Mutual Information, Entropy & Correlation: Exam Notes</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; }
+        h2 { color: #2c3e50; }
+        p { margin-bottom: 1em; }
+        ul { margin-left: 20px; }
+        li { margin-bottom: 0.5em; }
+        .formula { background-color: #f4f4f4; padding: 10px; margin-bottom: 1em; }
+    </style>
+</head>
+<body>
+    <h1>COMP20008 - Mutual Information, Entropy & Correlation: Exam Notes</h1>
+
+    <h2>Genetic Networks & Correlation</h2>
+    <p><strong>Genetic Networks:</strong> Connecting genes with high correlation can help understand the behavior of gene groups.</p>
+    <p>For more information, refer to: <a href="http://www.john.ranola.org/?page_id=11629" target="_blank">Genetic Network Information</a></p>
+
+    <h2>Pearson Correlation</h2>
+    <p><strong>Pearson Correlation (r<sub>xy</sub>):</strong> A measure of linear correlation between two features x and y. It assesses how close the scatter plot of x and y is to a straight line.</p>
+    <ul>
+        <li><strong>Range:</strong> -1 ≤ r<sub>xy</sub> ≤ 1</li>
+        <li><strong>Interpretation:</strong>
+            <ul>
+                <li><strong>r<sub>xy</sub> = 1:</strong> Perfect positive linear correlation.</li>
+                <li><strong>r<sub>xy</sub> = -1:</strong> Perfect negative linear correlation.</li>
+                <li><strong>r<sub>xy</sub> = 0:</strong> No linear correlation.</li>
+            </ul>
+        </li>
+    </ul>
+    <p>For more information, visit: <a href="https://www.mathsisfun.com/data/correlation.html" target="_blank">Math is Fun - Correlation</a></p>
+
+    <h2>Mutual Information</h2>
+    <p><strong>Mutual Information (MI):</strong> A correlation measure that can detect both linear and non-linear relationships between two variables X and Y.</p>
+    <ul>
+        <li><strong>Properties:</strong>
+            <ul>
+                <li><strong>MI(X, Y) &gt; 0:</strong> X and Y share some information (more dependent).</li>
+                <li><strong>MI(X, Y) = 0:</strong> X and Y are independent.</li>
+                <li><strong>MI(X, Y) &gt; 1:</strong> Indicates a high correlation.</li>
+            </ul>
+        </li>
+        <li><strong>Normalisation:</strong> Mutual Information can be normalised using the entropy values of X and Y.
+            <div class="formula">0 ≤ MI(X, Y) ≤ min(H(X), H(Y))</div>
+        </li>
+    </ul>
+    <p><strong>Example:</strong> Mutual information can be used to assess the relationship between different gene expressions in a genetic network.</p>
+
+    <h2>Entropy of a Random Variable</h2>
+    <p><strong>Entropy (H):</strong> A measure of uncertainty or randomness in a random variable X.</p>
+    <ul>
+        <li><strong>Formula:</strong>
+            <div class="formula">H(X) = - ∑ p<sub>i</sub> log(p<sub>i</sub>)</div>
+        </li>
+        <li><strong>Example:</strong> Suppose there are 3 bins, each containing one-third of the objects:
+            <div class="formula">H(X) = - [ 0.33 × log(0.33) + 0.33 × log(0.33) + 0.33 × log(0.33) ] = 1.58</div>
+        </li>
+        <li><strong>Another Example:</strong> For 9 objects in 3 categories (A, B, C), where A appears 4 times, B appears 3 times, and C appears 2 times:
+            <div class="formula">H(X) = 1.53</div>
+        </li>
+    </ul>
+    <p>Entropy is useful in determining the variability and predictability of data points in a given dataset.</p>
+
+    <p>Continue to the next part of the notes for further exploration of mutual information, entropy, and correlation techniques.</p>
+</body>
+</html>

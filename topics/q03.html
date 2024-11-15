@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COMP20008 - Regular Expression Pattern Matching: Exam Practice</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; }
+        h2 { color: #2c3e50; }
+        p { margin-bottom: 1em; }
+        ul { margin-left: 20px; }
+        li { margin-bottom: 0.5em; }
+        .formula { background-color: #f4f4f4; padding: 10px; margin-bottom: 1em; }
+        .example { background-color: #e8f4e8; padding: 10px; margin-bottom: 1em; }
+    </style>
+</head>
+<body>
+    <h1>COMP20008 - Regular Expression Pattern Matching: Exam Practice</h1>
+
+    <h2>Question 3</h2>
+    <p>Consider the following regular expression meta operators:</p>
+    <p><strong>() [] {} . * + ? ^ $ \ |</strong></p>
+    <p>For each of the following, give a couple of examples of strings which the regular expression would match. Describe (colloquially, in a manner that a non-technical person would understand) the set of strings that the pattern is designed to match. Each regular expression is enclosed in the pair of '/' characters below. [2 marks each]</p>
+
+    <h3>(a) Regular Expression: /^ [A-Za-z][a-z]* $/</h3>
+    <p><strong>Examples of matching strings:</strong></p>
+    <ul>
+        <li>"Apple"</li>
+        <li>"Screen"</li>
+        <li>"Exam"</li>
+    </ul>
+    <p><strong>Explanation:</strong> This regular expression matches any string that starts with an uppercase or lowercase letter (from A to Z or a to z) and is followed by zero or more lowercase letters. For instance, "Apple" or "Screen" match because they start with a capital letter followed by lowercase letters. The pattern does not match words like "apple" if they do not start with a capital letter. It is designed to match single words that have an initial uppercase letter, commonly used for proper nouns or titles.</p>
+
+    <h3>(b) Regular Expression: /\s(\w+)\s\1/</h3>
+    <p><strong>Examples of matching strings:</strong></p>
+    <ul>
+        <li>" hello hello "</li>
+        <li>" hi hi "</li>
+        <li>" comp20008 comp20008 "</li>
+    </ul>
+    <p><strong>Explanation:</strong> This regular expression matches a space followed by any word (letters, numbers, or underscores) and then a space followed by the same word again. For example, "hello hello" or "hi hi" match this pattern. The idea is that the word appears twice consecutively, separated by a space. This could be used to detect repeated words in a text, which is useful for identifying errors or repetitive phrasing.</p>
+
+    <h2>Practice Question 1</h2>
+    <p><strong>Regular Expression: /^[0-9]{4}$/</strong></p>
+    <p>Give examples of strings that match the pattern and explain what the pattern is designed to match.</p>
+    <p><strong>Examples of matching strings:</strong></p>
+    <ul>
+        <li>"2023"</li>
+        <li>"1234"</li>
+    </ul>
+    <p><strong>Explanation:</strong> This regular expression matches any string that contains exactly four digits. For example, "2023" and "1234" match because they are composed of exactly four numerical characters. This pattern is useful for matching years, PIN codes, or any numeric value with precisely four digits.</p>
+
+    <h2>Practice Question 2</h2>
+    <p><strong>Regular Expression: /^[A-Za-z0-9_]+$/</strong></p>
+    <p>Give examples of strings that match the pattern and explain what the pattern is designed to match.</p>
+    <p><strong>Examples of matching strings:</strong></p>
+    <ul>
+        <li>"user_name1"</li>
+        <li>"Hello123"</li>
+    </ul>
+    <p><strong>Explanation:</strong> This regular expression matches any string that consists of uppercase letters, lowercase letters, digits, or underscores. It matches strings like "user_name1" and "Hello123" but does not match strings containing special characters or spaces. This is commonly used to validate usernames or identifiers in programming.</p>
+
+    <h2>Practice Question 3</h2>
+    <p><strong>Regular Expression: /^(\d{1,3}\.){3}\d{1,3}$/</strong></p>
+    <p>Give examples of strings that match the pattern and explain what the pattern is designed to match.</p>
+    <p><strong>Examples of matching strings:</strong></p>
+    <ul>
+        <li>"192.168.1.1"</li>
+        <li>"127.0.0.1"</li>
+    </ul>
+    <p><strong>Explanation:</strong> This regular expression matches an IP address in IPv4 format. It matches strings like "192.168.1.1" or "127.0.0.1", which consist of four groups of one to three digits, each group separated by a dot. This pattern is useful for validating IP addresses in network programming or web development.</p>
+
+    <h2>Summary</h2>
+    <p>Regular expressions are powerful tools for pattern matching and text processing. Understanding the various meta operators and how they work can help you build complex patterns to match specific types of strings. Practice identifying the patterns and understanding their use cases to get more comfortable with regular expressions.</p>
+</body>
+</html>

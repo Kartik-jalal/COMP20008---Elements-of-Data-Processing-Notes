@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COMP20008 - Outliers & Visualization Techniques: Exam Notes</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; }
+        h2 { color: #2c3e50; }
+        p { margin-bottom: 1em; }
+        ul { margin-left: 20px; }
+        li { margin-bottom: 0.5em; }
+    </style>
+</head>
+<body>
+    <h1>COMP20008 - Outliers & Visualization Techniques: Exam Notes</h1>
+
+    <h2>Outliers and Tukey Boxplots</h2>
+    <p><strong>Tukey Boxplots</strong> are used to visualize the distribution of data and identify outliers:</p>
+    <ul>
+        <li><strong>Median:</strong> The middle data point after sorting.</li>
+        <li><strong>Q1 (First Quartile):</strong> The middle data point below the median.</li>
+        <li><strong>Q3 (Third Quartile):</strong> The middle data point above the median.</li>
+        <li><strong>IQR (Interquartile Range):</strong> Calculated as Q3 - Q1.</li>
+        <li><strong>Whiskers (Inner Fence):</strong>
+            <ul>
+                <li><strong>Upper Limit:</strong> Q3 + 1.5 &times; IQR.</li>
+                <li><strong>Lower Limit:</strong> Q1 - 1.5 &times; IQR.</li>
+                <li><strong>Upper Inner Fence:</strong> Highest data point &le; Upper Limit.</li>
+                <li><strong>Lower Inner Fence:</strong> Lowest data point &ge; Lower Limit.</li>
+            </ul>
+        </li>
+        <li><strong>Suspected Outliers:</strong> Data points greater than 1.5 &times; IQR below Q1 or above Q3 (represented by circles).</li>
+        <li><strong>Outliers:</strong> Data points greater than 3 &times; IQR below Q1 or above Q3 (represented by black dots).</li>
+    </ul>
+
+    <h2>Basic Visualization Techniques</h2>
+    <p>Basic visualizations help communicate insights from data effectively. Common types include:</p>
+    <ul>
+        <li><strong>Line Plots:</strong> Used to show trends over time or a continuous variable.</li>
+        <li><strong>Boxplots:</strong> Useful for visualizing the distribution of data and identifying outliers.</li>
+        <li><strong>Histograms:</strong> Show the frequency distribution of a single variable, helping understand data spread.</li>
+        <li><strong>Bar Charts:</strong> Used to compare categorical data.</li>
+        <li><strong>Scatter Plots:</strong> Visualize the relationship between two numerical variables.</li>
+        <li><strong>Heatmaps:</strong> Represent data values through variations in color, useful for correlation matrices.</li>
+        <li><strong>Parallel Coordinates:</strong> Visualize multivariate data by showing each variable on a separate vertical axis.</li>
+    </ul>
+
+    <p>Continue to the next part of the notes for advanced visualization techniques and applications.</p>
+</body>
+</html>

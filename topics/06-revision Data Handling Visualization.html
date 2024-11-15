@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COMP20008 - Data Handling & Visualization: Exam Notes</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; }
+        h2 { color: #2c3e50; }
+        p { margin-bottom: 1em; }
+        ul { margin-left: 20px; }
+        li { margin-bottom: 0.5em; }
+        .formula { background-color: #f4f4f4; padding: 10px; margin-bottom: 1em; }
+    </style>
+</head>
+<body>
+    <h1>COMP20008 - Data Handling & Visualization: Exam Notes</h1>
+
+    <h2>Data Wrangling</h2>
+    <p><strong>Data Wrangling:</strong> The process of transforming raw data into a more usable format for analysis, including cleaning and handling missing values.</p>
+    <ul>
+        <li><strong>Handling Missing Values:</strong>
+            <ul>
+                <li><strong>Deletion:</strong> Remove rows or columns with missing values if they are not critical.</li>
+                <li><strong>Imputation:</strong> Replace missing values with statistical measures such as mean, median, or mode.</li>
+                <li><strong>Example:</strong> In a dataset with missing values for income, impute using the median to avoid skewing results.</li>
+            </ul>
+        </li>
+        <li><strong>Data Normalization:</strong> Scale data to a common range, often between 0 and 1, to improve model performance.</li>
+    </ul>
+
+    <h2>Data Applications</h2>
+    <p><strong>Data Applications:</strong> Utilizing data to extract insights and drive decisions in various domains.</p>
+    <ul>
+        <li><strong>Customer Insights:</strong> Businesses use customer data to identify buying patterns and improve marketing strategies.</li>
+        <li><strong>Predictive Analysis:</strong> Using historical data to predict future events, e.g., predicting customer churn.</li>
+        <li><strong>Example:</strong> Retailers analyze transaction data to offer personalized product recommendations to customers.</li>
+    </ul>
+
+    <h2>Data Description & Visualization</h2>
+    <p><strong>Descriptive Statistics:</strong> Summarize key characteristics of data, such as mean, median, mode, variance, and standard deviation.</p>
+    <ul>
+        <li><strong>Mean (&#956;):</strong> Average value of a dataset.
+            <div class="formula">&#956; = (&#8721;x<sub>i</sub>) / n</div>
+        </li>
+        <li><strong>Standard Deviation (&#963;):</strong> Measures the spread of data around the mean.
+            <div class="formula">&#963; = &#8730;[(&#8721;(x<sub>i</sub> - &#956;)<sup>2</sup>) / n]</div>
+        </li>
+    </ul>
+    <p><strong>Visualization Techniques:</strong> Graphical methods to represent data, making patterns easier to recognize.</p>
+    <ul>
+        <li><strong>Bar Charts:</strong> Used to display categorical data as rectangular bars.</li>
+        <li><strong>Line Charts:</strong> Show trends over time by connecting data points with lines.</li>
+        <li><strong>Box Plots:</strong> Visualize the distribution of data through quartiles and identify outliers.</li>
+    </ul>
+
+    <h2>Outliers & Visualization Techniques</h2>
+    <p><strong>Outliers:</strong> Data points that differ significantly from other observations and may indicate variability or errors in data.</p>
+    <ul>
+        <li><strong>Detection Methods:</strong>
+            <ul>
+                <li><strong>Z-Score:</strong> Measures how many standard deviations a value is from the mean. Values with |Z| > 3 are often considered outliers.
+                    <div class="formula">Z = (x - &#956;) / &#963;</div>
+                </li>
+                <li><strong>IQR Method:</strong> Outliers are those beyond the range of [Q1 - 1.5*IQR, Q3 + 1.5*IQR].</li>
+            </ul>
+        </li>
+        <li><strong>Visualization for Outliers:</strong> Use box plots or scatter plots to easily identify outliers in a dataset.</li>
+    </ul>
+
+    <h2>Iris Dataset & Histograms</h2>
+    <p><strong>Iris Dataset:</strong> A well-known dataset consisting of 150 records of iris flowers, categorized into three species.</p>
+    <ul>
+        <li><strong>Features:</strong> Sepal length, sepal width, petal length, petal width.</li>
+        <li><strong>Histograms:</strong> Used to visualize the distribution of each feature.
+            <ul>
+                <li><strong>Example:</strong> Plotting petal length reveals different distributions for each species, helping with classification.</li>
+            </ul>
+        </li>
+    </ul>
+    <p><strong>Use Case:</strong> Histograms provide insights into feature importance and can help determine which features are useful for distinguishing between classes.</p>
+
+    <h2>Data Visualization & Handling Techniques</h2>
+    <p><strong>Advanced Visualization Techniques:</strong></p>
+    <ul>
+        <li><strong>Heatmaps:</strong> Visual representations of data where values are depicted by color. Useful for identifying correlations in a dataset.</li>
+        <li><strong>Pair Plots:</strong> Scatter plots of each pair of features in a dataset to identify relationships.</li>
+    </ul>
+    <p><strong>Data Transformation Techniques:</strong> Methods used to modify data to fit better within a model.</p>
+    <ul>
+        <li><strong>Log Transformation:</strong> Useful when data has a long tail distribution. Helps stabilize variance.</li>
+        <li><strong>Min-Max Scaling:</strong> Transform data to fit within a fixed range, typically [0, 1].
+            <div class="formula">X<sub>scaled</sub> = (X - X<sub>min</sub>) / (X<sub>max</sub> - X<sub>min</sub>)</div>
+        </li>
+    </ul>
+
+    <p>Continue to the next part of the notes for further exploration of data wrangling, advanced visualization techniques, and data applications in real-world scenarios.</p>
+</body>
+</html>

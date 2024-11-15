@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COMP20008 - Machine Learning Techniques: Exam Notes</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; }
+        h2 { color: #2c3e50; }
+        p { margin-bottom: 1em; }
+        ul { margin-left: 20px; }
+        li { margin-bottom: 0.5em; }
+        .formula { background-color: #f4f4f4; padding: 10px; margin-bottom: 1em; }
+    </style>
+</head>
+<body>
+    <h1>COMP20008 - Machine Learning Techniques: Exam Notes</h1>
+
+    <h2>Regression Analysis & Decision Trees</h2>
+    <p><strong>Simple Linear Regression:</strong> A technique used to model the relationship between a dependent variable (Y) and an independent variable (X).</p>
+    <ul>
+        <li><strong>Equation:</strong> The line of best fit is given by:
+            <div class="formula">Y = b<sub>0</sub> + b<sub>1</sub>X</div>
+        </li>
+        <li><strong>Example:</strong> Predicting house prices based on square footage.</li>
+    </ul>
+    <p><strong>Multiple Linear Regression:</strong> Extends simple linear regression to include multiple independent variables.</p>
+    <ul>
+        <li><strong>Equation:</strong>
+            <div class="formula">Y = b<sub>0</sub> + b<sub>1</sub>X<sub>1</sub> + b<sub>2</sub>X<sub>2</sub> + ... + b<sub>n</sub>X<sub>n</sub></div>
+        </li>
+    </ul>
+    <p><strong>Decision Trees:</strong> A tree-like model used to make decisions based on the values of input features.</p>
+    <ul>
+        <li><strong>Splitting Criteria:</strong> Uses metrics like Gini impurity or information gain to decide the best attribute to split.</li>
+        <li><strong>Example:</strong> Predicting whether a customer will buy a product based on age and income.</li>
+    </ul>
+
+    <h2>Clustering & Dimensionality Reduction</h2>
+    <p><strong>K-means Clustering:</strong> An unsupervised learning algorithm that partitions data into K clusters by minimizing intra-cluster variance.</p>
+    <ul>
+        <li><strong>Steps:</strong>
+            <ol>
+                <li>Choose the number of clusters (K).</li>
+                <li>Randomly initialize K cluster centroids.</li>
+                <li>Assign each point to the nearest centroid.</li>
+                <li>Recalculate centroids and repeat until convergence.</li>
+            </ol>
+        </li>
+        <li><strong>Elbow Method:</strong> Used to determine the optimal number of clusters by plotting the sum of squared errors (SSE) against K.</li>
+        <li><strong>Example:</strong> Segmenting customers based on purchasing behavior.</li>
+    </ul>
+    <p><strong>Hierarchical Clustering:</strong> A clustering method that builds a tree-like structure (dendrogram) to represent nested clusters.</p>
+    <ul>
+        <li><strong>Agglomerative Approach:</strong> Start with individual points and merge the closest clusters iteratively.</li>
+        <li><strong>Divisive Approach:</strong> Start with all points in one cluster and split recursively.</li>
+    </ul>
+    <p><strong>Dimensionality Reduction:</strong> Techniques used to reduce the number of features while retaining as much information as possible.</p>
+    <ul>
+        <li><strong>Principal Component Analysis (PCA):</strong> Projects data onto a lower-dimensional space while maximizing variance.</li>
+        <li><strong>Use Case:</strong> Visualizing high-dimensional data in 2D or 3D.</li>
+    </ul>
+
+    <h2>Recommender Systems & Privacy</h2>
+    <p><strong>Recommender Systems:</strong> Systems designed to suggest items to users based on their preferences or similarities with other users/items.</p>
+    <ul>
+        <li><strong>Item-Based Collaborative Filtering:</strong> Recommends items similar to those a user has liked in the past.
+            <div class="formula">sim(x<sub>i</sub>, x<sub>j</sub>) = (x<sub>i</sub> · x<sub>j</sub>) / (||x<sub>i</sub>|| ||x<sub>j</sub>||)</div>
+        </li>
+        <li><strong>User-Based Collaborative Filtering:</strong> Recommends items based on similar users' preferences.</li>
+    </ul>
+    <p><strong>Privacy in Recommender Systems:</strong> Privacy concerns arise when user data is collected for personalized recommendations.</p>
+    <ul>
+        <li><strong>Anonymization:</strong> Removing direct identifiers to protect user privacy, though it may not be foolproof.</li>
+        <li><strong>De-anonymization Risks:</strong> Linking anonymized data with external data can lead to re-identification.</li>
+    </ul>
+
+    <p>Continue to the next part of the notes for further exploration of machine learning techniques, clustering, and recommendation systems.</p>
+</body>
+</html>

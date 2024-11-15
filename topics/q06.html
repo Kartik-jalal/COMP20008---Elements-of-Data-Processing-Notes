@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COMP20008 - Supervised vs Unsupervised Algorithms: Exam Practice</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; }
+        h2 { color: #2c3e50; }
+        p { margin-bottom: 1em; }
+        ul { margin-left: 20px; }
+        li { margin-bottom: 0.5em; }
+        .formula { background-color: #f4f4f4; padding: 10px; margin-bottom: 1em; }
+        .example { background-color: #e8f4e8; padding: 10px; margin-bottom: 1em; }
+    </style>
+</head>
+<body>
+    <h1>COMP20008 - Supervised vs Unsupervised Algorithms: Exam Practice</h1>
+
+    <h2>Question 6</h2>
+    <p>It is generally said that supervised algorithms perform better than unsupervised algorithms. Let’s assume you are working in a computer security company, and your task is to identify suspicious email attachments, i.e., do they contain a virus or not.</p>
+    
+    <h3>Part 1: Quick definition of the difference between supervised and unsupervised algorithms. [1 mark]</h3>
+    <p><strong>Answer:</strong> Supervised learning uses labeled data, meaning that the training dataset has input-output pairs (features and their corresponding labels). Unsupervised learning, on the other hand, uses unlabeled data, meaning the training data contains only features without any labels or predefined outcomes.</p>
+
+    <h3>Part 2: Why might supervised algorithms perform better for virus detection? [2 marks]</h3>
+    <p><strong>Answer:</strong> Supervised algorithms generally perform better in scenarios like virus detection because they are trained on labeled examples of "virus" and "non-virus" attachments. This allows them to produce a more accurate model by learning specific patterns associated with viruses, resulting in effective classifications. For example, if we have good virus signatures and correct labels, a supervised approach will effectively detect suspicious attachments, leading to high accuracy in classification.</p>
+
+    <h3>Part 3: Why might we still prefer unsupervised methods in computer security? [2 marks]</h3>
+    <p><strong>Answer:</strong> In the security domain, things change rapidly, and new threats can emerge that were not part of the initial training data. Supervised algorithms rely on historical data and may struggle to detect new and unknown threats. Unsupervised algorithms can identify unusual patterns, making them more flexible for detecting anomalies. Furthermore, computer security datasets are often highly imbalanced, with only a few positive (e.g., virus) cases. Unsupervised methods are useful in such cases because they are better at detecting outliers or unknown instances without requiring labeled data.</p>
+
+    <h2>Practice Question 1</h2>
+    <p><strong>Which of the following is an example of a supervised learning problem?</strong></p>
+    <ul>
+        <li>Clustering customers based on purchasing behavior</li>
+        <li>Classifying emails as spam or not spam</li>
+        <li>Finding hidden patterns in a dataset</li>
+        <li>Grouping data into distinct segments without labels</li>
+    </ul>
+    <p><strong>Correct Answer:</strong> Classifying emails as spam or not spam</p>
+    <div class="example">
+        <strong>Explanation:</strong> This is a supervised learning problem because the model is trained on labeled data, where emails are labeled as either "spam" or "not spam" to teach the algorithm how to classify future instances.
+    </div>
+
+    <h2>Practice Question 2</h2>
+    <p><strong>In which of the following scenarios would unsupervised learning be the most suitable?</strong></p>
+    <ul>
+        <li>Predicting the stock price of a company for the next day</li>
+        <li>Grouping customers based on similarities in purchase history</li>
+        <li>Classifying images of animals as dogs or cats</li>
+        <li>Predicting a student's final grade based on their previous test scores</li>
+    </ul>
+    <p><strong>Correct Answer:</strong> Grouping customers based on similarities in purchase history</p>
+    <div class="example">
+        <strong>Explanation:</strong> This is an unsupervised learning scenario because we do not have predefined labels. The goal is to find hidden patterns and segment customers into groups based on their purchase behavior.
+    </div>
+
+    <h2>Practice Question 3</h2>
+    <p><strong>What is a major limitation of supervised learning in the context of computer security?</strong></p>
+    <ul>
+        <li>It requires labeled data, which may not always be available</li>
+        <li>It is unable to detect any threats</li>
+        <li>It always results in high bias</li>
+        <li>It only works for structured data</li>
+    </ul>
+    <p><strong>Correct Answer:</strong> It requires labeled data, which may not always be available</p>
+    <div class="example">
+        <strong>Explanation:</strong> Supervised learning relies on labeled data, which can be difficult to obtain in the domain of computer security, especially for new and evolving threats. This is a major limitation, as it may prevent the detection of unknown or novel threats.
+    </div>
+
+    <h2>Summary</h2>
+    <p>Supervised and unsupervised learning are two common types of machine learning algorithms. Supervised learning works well for classification tasks with labeled data, while unsupervised learning is valuable for finding patterns in unlabeled data, especially in rapidly changing domains like computer security where new threats emerge frequently.</p>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COMP20008 - Sentiment Analysis Preprocessing: Exam Practice</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; }
+        h2 { color: #2c3e50; }
+        p { margin-bottom: 1em; }
+        ul { margin-left: 20px; }
+        li { margin-bottom: 0.5em; }
+        .example { background-color: #e8f4e8; padding: 10px; margin-bottom: 1em; }
+    </style>
+</head>
+<body>
+    <h1>COMP20008 - Sentiment Analysis Preprocessing: Exam Practice</h1>
+
+    <h2>Question 9</h2>
+    <p>We have a collection of 100,000 short free texts containing comments on the video lectures in COMP20008. We are to perform sentiment analysis using this dataset. The sentiment of a comment can be either positive, negative, or neutral. We have the sentiment labels for 10,000 comments and would like to develop a classification model to automatically classify a comment into the sentiment category.</p>
+
+    <p>The first three short comments are shown below; text are enclosed in double quotes. The sentiments for the three comments are positive, negative, and neutral respectively.</p>
+    <ol>
+        <li>"The short 15-20 min video recordings are great! They allow me to go back to watch a specific topic easily."</li>
+        <li>"The recorded video-sessions would never to be watched, it is just not the same as real-time interaction we need for subjects like COMP20008. A lecture normally lasts for 50 minutes and I am used to it."</li>
+        <li>"Lectures are now recorded due to COVID-19 and all subjects are gone online including COMP20008."</li>
+    </ol>
+
+    <h3>Describe the preprocessing required to use the data for the task. Illustrate the preprocessing with examples using the three comments shown above. [2 marks]</h3>
+    <p><strong>Answer:</strong> The preprocessing steps for sentiment analysis include:</p>
+    <ul>
+        <li><strong>Remove stop words:</strong> Common words like "the", "are", "a", "it", "and" do not contribute to sentiment and should be removed.</li>
+        <div class="example">
+            <strong>Example:</strong> From comment 1, "The short 15-20 min video recordings are great!" becomes "short 15-20 min video recordings great!"
+        </div>
+        <li><strong>Convert everything to lowercase:</strong> Sentiment analysis is case insensitive, so all text should be converted to lowercase.</li>
+        <div class="example">
+            <strong>Example:</strong> From comment 2, "Lecturers" becomes "lecturers".</div>
+        <li><strong>Remove punctuations and numbers:</strong> Punctuations and numbers do not typically contribute to sentiment analysis and should be removed.</li>
+        <div class="example">
+            <strong>Example:</strong> From comment 1, "short 15-20 min video recordings great!" becomes "short min video recordings great".</div>
+        <li><strong>Stemming or Lemmatization:</strong> Reduce words to their base or root form. For instance, words like "recording" and "recorded" are stemmed to "record".</li>
+        <div class="example">
+            <strong>Example:</strong> From comment 3, "recorded" becomes "record".</div>
+    </ul>
+    <p><strong>Representation Model:</strong> Finally, convert the text to a numerical format using a representation model such as Bag of Words (BoW) or TF-IDF (Term Frequency-Inverse Document Frequency).</p>
+    <div class="example">
+        <strong>Example:</strong> For comment 1, using Bag of Words, "short", "video", "recordings", "great" will become a vector representing the frequency of each word in the entire dataset.
+    </div>
+
+    <h2>Practice Question 1</h2>
+    <p><strong>Why is it important to remove stop words during sentiment analysis?</strong></p>
+    <ul>
+        <li>They add valuable meaning to the sentiment analysis.</li>
+        <li>They are common words that do not help in determining the sentiment.</li>
+        <li>They are necessary for understanding the context of the text.</li>
+        <li>They need to be removed for privacy reasons.</li>
+    </ul>
+    <p><strong>Correct Answer:</strong> They are common words that do not help in determining the sentiment.</p>
+    <div class="example">
+        <strong>Explanation:</strong> Stop words are words that are frequently used but do not add significant meaning to the sentiment analysis. Removing them helps in focusing on more meaningful words.</div>
+
+    <h2>Practice Question 2</h2>
+    <p><strong>What is the purpose of stemming in text preprocessing?</strong></p>
+    <ul>
+        <li>To convert all words to uppercase.</li>
+        <li>To remove punctuation from the text.</li>
+        <li>To reduce words to their base form for easier analysis.</li>
+        <li>To add new stop words to the dataset.</li>
+    </ul>
+    <p><strong>Correct Answer:</strong> To reduce words to their base form for easier analysis.</p>
+    <div class="example">
+        <strong>Explanation:</strong> Stemming helps in reducing words to their root form so that variations of a word, such as "running", "ran", "runner", are all treated as the same word, "run".</div>
+
+    <h2>Practice Question 3</h2>
+    <p><strong>What is TF-IDF and why is it useful in text representation?</strong></p>
+    <ul>
+        <li>It represents the frequency of words in a dataset.</li>
+        <li>It helps in identifying stop words in a text.</li>
+        <li>It represents how important a word is in a document relative to a collection of documents.</li>
+        <li>It is used to convert words to uppercase.</li>
+    </ul>
+    <p><strong>Correct Answer:</strong> It represents how important a word is in a document relative to a collection of documents.</p>
+    <div class="example">
+        <strong>Explanation:</strong> TF-IDF assigns a higher weight to words that are common in a specific document but not in many other documents, helping to identify important words for classification purposes.</div>
+
+    <h2>Summary</h2>
+    <p>Text preprocessing is a crucial step in preparing data for sentiment analysis. It involves removing stop words, converting text to lowercase, removing punctuation and numbers, and applying stemming or lemmatization. Finally, the text is represented numerically using models such as Bag of Words or TF-IDF to facilitate classification tasks.</p>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COMP20008 - Correlation Visualization Techniques: Exam Practice</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; }
+        h2 { color: #2c3e50; }
+        p { margin-bottom: 1em; }
+        ul { margin-left: 20px; }
+        li { margin-bottom: 0.5em; }
+        .formula { background-color: #f4f4f4; padding: 10px; margin-bottom: 1em; }
+        .example { background-color: #e8f4e8; padding: 10px; margin-bottom: 1em; }
+    </style>
+</head>
+<body>
+    <h1>COMP20008 - Correlation Visualization Techniques: Exam Practice</h1>
+
+    <h2>Question 4</h2>
+    <p>We have a multidimensional dataset with 4 numerical attributes and are required to thoroughly assess correlations among the attributes with visualization. There are several visualization techniques we can use to assess correlations.</p>
+    
+    <h3>Part 1: What aspects of correlation could we assess? [1 mark]</h3>
+    <p><strong>Answer:</strong> We could assess both the strength and direction of the correlation between the attributes. The strength indicates how closely the data points follow a linear relationship, while the direction can be positive (when one variable increases, the other also increases) or negative (when one increases, the other decreases). Additionally, we can assess whether the correlation is linear or non-linear.</p>
+
+    <h3>Part 2: Which two visualization techniques are most suitable for assessing correlations in this dataset? [1 mark]</h3>
+    <p><strong>Answer:</strong> The two most suitable visualization techniques for assessing correlations are:</p>
+    <ul>
+        <li><strong>Scatter Plot Matrix (Pair Plot):</strong> This helps visualize pairwise relationships between multiple numerical attributes, making it easier to identify potential correlations.</li>
+        <li><strong>Parallel Coordinates Plot:</strong> This visualization shows each data point as a line across multiple axes, allowing us to see trends and relationships among several numerical attributes.</li>
+    </ul>
+
+    <h3>Part 3: Nominate the best choice of visualization and justify your choice. [2 marks]</h3>
+    <p><strong>Answer:</strong> The best choice of visualization for assessing correlations among the attributes is the <strong>Scatter Plot Matrix</strong>. The scatter plot matrix allows for a clear and detailed view of the pairwise relationships between variables, including the type of correlation (linear or non-linear) and the strength of each relationship. Compared to the parallel coordinates plot, which can become cluttered and harder to interpret as the number of attributes increases, the scatter plot matrix provides a more intuitive way to assess pairwise relationships individually, making it the best choice for this scenario.</p>
+
+    <h2>Practice Question 1</h2>
+    <p><strong>What is the main purpose of using a scatter plot to assess correlation?</strong></p>
+    <ul>
+        <li>To determine the exact value of the correlation coefficient.</li>
+        <li>To visually examine the relationship between two numerical variables.</li>
+        <li>To group data into different categories.</li>
+        <li>To predict future values based on past data.</li>
+    </ul>
+    <p><strong>Correct Answer:</strong> To visually examine the relationship between two numerical variables.</p>
+    <div class="example">
+        <strong>Explanation:</strong> A scatter plot is used to examine how two variables are related. The distribution of the points can indicate if there is a linear or non-linear correlation, as well as the direction and strength of the relationship.
+    </div>
+
+    <h2>Practice Question 2</h2>
+    <p><strong>When would you use a parallel coordinates plot over a scatter plot to assess correlation?</strong></p>
+    <ul>
+        <li>When you have only two numerical variables.</li>
+        <li>When you want to assess correlations for multiple numerical variables simultaneously.</li>
+        <li>When you need to predict future trends.</li>
+        <li>When you need to classify categorical variables.</li>
+    </ul>
+    <p><strong>Correct Answer:</strong> When you want to assess correlations for multiple numerical variables simultaneously.</p>
+    <div class="example">
+        <strong>Explanation:</strong> A parallel coordinates plot is useful for visualizing trends and relationships across multiple variables at the same time, which makes it efficient for understanding multidimensional datasets. Scatter plots, on the other hand, are typically used to examine relationships between two variables at a time.
+    </div>
+
+    <h2>Practice Question 3</h2>
+    <p><strong>Which visualization technique is most suitable for quickly identifying the strength of correlation across all attributes in a dataset?</strong></p>
+    <ul>
+        <li>Bar Chart</li>
+        <li>Correlation Heatmap</li>
+        <li>Scatter Plot</li>
+        <li>Histogram</li>
+    </ul>
+    <p><strong>Correct Answer:</strong> Correlation Heatmap</p>
+    <div class="example">
+        <strong>Explanation:</strong> A correlation heatmap provides a summary of the correlations between all numerical variables by using color gradients to represent the strength and direction of the correlations, making it easy to identify patterns at a glance.
+    </div>
+
+    <h2>Practice Question 4</h2>
+    <p><strong>Which visualization technique would be the most appropriate to use when you want to see the pairwise relationship between every combination of four numerical variables?</strong></p>
+    <ul>
+        <li>Bar Chart</li>
+        <li>Box Plot</li>
+        <li>Scatter Plot Matrix</li>
+        <li>Histogram</li>
+    </ul>
+    <p><strong>Correct Answer:</strong> Scatter Plot Matrix</p>
+    <div class="example">
+        <strong>Explanation:</strong> A scatter plot matrix allows you to visualize all pairwise combinations of variables in a dataset, which is useful for identifying correlations and understanding the relationships between all variables.
+    </div>
+
+    <h2>Practice Question 5</h2>
+    <p><strong>What is a major limitation of using a scatter plot matrix for analyzing correlations in a dataset with more than four numerical attributes?</strong></p>
+    <ul>
+        <li>It cannot show non-linear relationships.</li>
+        <li>It becomes cluttered and difficult to interpret with many variables.</li>
+        <li>It only shows summary statistics.</li>
+        <li>It requires categorical variables.</li>
+    </ul>
+    <p><strong>Correct Answer:</strong> It becomes cluttered and difficult to interpret with many variables.</p>
+    <div class="example">
+        <strong>Explanation:</strong> When there are many numerical attributes, a scatter plot matrix generates numerous individual plots, which can make the visualization cluttered and difficult to interpret. Heatmaps are usually preferred for summarizing correlations in larger datasets.
+    </div>
+
+    <h2>Practice Question 6</h2>
+    <p><strong>Why might a parallel coordinates plot be suitable for assessing correlations in a dataset with multiple numerical variables?</strong></p>
+    <ul>
+        <li>It provides a quick summary of all correlations without visual clutter.</li>
+        <li>It shows the distribution of individual data points.</li>
+        <li>It allows you to visualize how each data point relates across multiple axes.</li>
+        <li>It is used to classify data into categories.</li>
+    </ul>
+    <p><strong>Correct Answer:</strong> It allows you to visualize how each data point relates across multiple axes.</p>
+    <div class="example">
+        <strong>Explanation:</strong> A parallel coordinates plot shows each data point as a line crossing several axes, which makes it suitable for observing trends and correlations across multiple numerical variables.
+    </div>
+
+    <h2>Summary</h2>
+    <p>Assessing correlations between attributes is an important step in understanding relationships within data. Visualization techniques such as scatter plots, scatter plot matrices, parallel coordinates plots, and heatmaps help identify the strength and direction of correlations. For multidimensional datasets, scatter plot matrices and parallel coordinates plots can provide deeper insight into the relationships between all variables.</p>
+</body>
+</html>

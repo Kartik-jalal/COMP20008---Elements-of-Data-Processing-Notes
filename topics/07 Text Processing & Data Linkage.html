@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COMP20008 - Text Processing & Data Linkage: Exam Notes</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; }
+        h2 { color: #2c3e50; }
+        p { margin-bottom: 1em; }
+        ul { margin-left: 20px; }
+        li { margin-bottom: 0.5em; }
+        .formula { background-color: #f4f4f4; padding: 10px; margin-bottom: 1em; }
+    </style>
+</head>
+<body>
+    <h1>COMP20008 - Text Processing & Data Linkage: Exam Notes</h1>
+
+    <h2>Noise Removal in Text Processing</h2>
+    <p>Noise removal is an essential step in text preprocessing, especially for unstructured text data:</p>
+    <ul>
+        <li><strong>Remove unnecessary spacing:</strong> Helps in reducing the inconsistency in text data.</li>
+        <li><strong>Remove punctuation and special characters:</strong> Use regular expressions to clean up the text.</li>
+        <li><strong>Unify numbers:</strong> Ensure consistency when dealing with numerical values.</li>
+        <li><strong>Domain Dependency:</strong> Noise removal techniques depend heavily on the domain and type of data.</li>
+    </ul>
+
+    <h2>Bag of Words (BoW) Model</h2>
+    <ul>
+        <li><strong>Stop Word Removal:</strong> Remove common words that add little meaning, such as "the", "and".</li>
+        <li><strong>Stemming vs. Lemmatization:</strong>
+            <ul>
+                <li><strong>Stemming:</strong> Reduces words to their root form (e.g., "running" becomes "run").</li>
+                <li><strong>Lemmatization:</strong> Reduces words to their base or dictionary form, considering the context (e.g., "better" becomes "good").</li>
+            </ul>
+        </li>
+        <li><strong>Word Counts:</strong> Count occurrences of each word to create the BoW representation.</li>
+    </ul>
+    <p><strong>Example:</strong> After preprocessing, the sentence "The cat is running" may become "cat run".</p>
+
+    <h2>Term Frequency-Inverse Document Frequency (TF-IDF)</h2>
+    <p>TF-IDF is used to assess the importance of words in a document relative to a collection of documents:</p>
+    <ul>
+        <li><strong>Term Frequency (TF):</strong> 
+            <div class="formula">tf<sub>t,d</sub> = count of term t in document d</div>
+        </li>
+        <li><strong>Inverse Document Frequency (IDF):</strong> 
+            <div class="formula">idf<sub>t</sub> = ln(1 + N / (1 + df<sub>t</sub>)) + 1</div>
+            <ul>
+                <li><strong>N:</strong> Total number of documents.</li>
+                <li><strong>df<sub>t</sub>:</strong> Number of documents containing term t.</li>
+            </ul>
+        </li>
+        <li><strong>TF-IDF (L2 Normalized):</strong> 
+            <div class="formula">tf-idf<sub>t,d</sub> = (tf<sub>t,d</sub> * idf<sub>t</sub>) / &#8730;(∑(tf<sub>t',d</sub>)<sup>2</sup>)</div>
+        </li>
+    </ul>
+    <p><strong>Example:</strong> A term appearing frequently in a single document but rarely in other documents will have a high TF-IDF score, indicating its significance in that document.</p>
+
+    <h2>Web Crawling & Data Sources</h2>
+    <ul>
+        <li><strong>Web Crawling:</strong> A method to collect data from the web, often using automated scripts.</li>
+        <li><strong>Data Sources:</strong>
+            <ul>
+                <li><strong>APIs:</strong> Provide structured access to data (e.g., Twitter API).</li>
+                <li><strong>Data Dumps:</strong> Precompiled datasets from platforms like Wikipedia, IMDB, etc.</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h2>Data Linkage</h2>
+    <p>Data linkage involves combining data about entities from multiple sources:</p>
+    <ul>
+        <li><strong>When and Why:</strong> Data linkage is needed when different datasets contain information about the same entities (e.g., linking medical records).</li>
+        <li><strong>Challenges:</strong> Noisy data, lack of unique keys, and scalability are common issues.</li>
+        <li><strong>Similarity Measures:</strong> Used to determine whether two records are likely to represent the same entity.</li>
+    </ul>
+    <p><strong>Example:</strong> Linking movie records from different databases by concatenating titles and release years, while dealing with challenges like "unrelated works with the same titles".</p>
+
+    <h2>Handling Noisy Data in Data Linkage</h2>
+    <ul>
+        <li><strong>Noisy Values:</strong> Data can be noisy due to missing attributes or inconsistent formats.</li>
+        <li><strong>Handling Keys:</strong> Often, datasets lack unique keys, so concatenation of different attributes (e.g., "Title, Year") is used to approximate a unique key.</li>
+    </ul>
+    <p><strong>Example:</strong> Removing diacritics from characters (e.g., "déjà" becomes "deja") can help in matching records more effectively.</p>
+
+    <p>Continue to the next part of the notes for more advanced text processing and data linkage techniques.</p>
+</body>
+</html>

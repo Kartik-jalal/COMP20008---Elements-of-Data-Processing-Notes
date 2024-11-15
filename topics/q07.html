@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COMP20008 - Linear Regression and Coefficient of Determination: Exam Practice</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; }
+        h2 { color: #2c3e50; }
+        p { margin-bottom: 1em; }
+        ul { margin-left: 20px; }
+        li { margin-bottom: 0.5em; }
+        .formula { background-color: #f4f4f4; padding: 10px; margin-bottom: 1em; }
+        .example { background-color: #e8f4e8; padding: 10px; margin-bottom: 1em; }
+    </style>
+</head>
+<body>
+    <h1>COMP20008 - Linear Regression and Coefficient of Determination: Exam Practice</h1>
+
+    <h2>Question 7</h2>
+    <p>Assume you have undertaken three separate linear regression analyses between the salary of an employee (dependent variable) and:</p>
+    <ol>
+        <li>Hours worked per week by the employee;</li>
+        <li>Employee final degree qualification average WAM;</li>
+        <li>Age of employee.</li>
+    </ol>
+    <p>You had data from 1,000 employees. Your model produces coefficients of determination of 0.65 for hours per week, 0.22 for WAM, and 0.93 for age.</p>
+
+    <h3>Part 1: What is the coefficient of determination and interpret the results of 0.65, 0.22, and 0.93. [1 mark]</h3>
+    <p><strong>Answer:</strong> The coefficient of determination, often denoted as R², represents the proportion of the total variation in the dependent variable (salary) that is explained by variation in the independent variable. It ranges from 0 to 1, with higher values indicating a better fit. In this example:</p>
+    <ul>
+        <li><strong>R² = 0.65 for hours worked per week:</strong> This means that 65% of the variation in salary can be explained by the number of hours worked per week.</li>
+        <li><strong>R² = 0.22 for WAM:</strong> Only 22% of the variation in salary is explained by the employee's final degree qualification average WAM, indicating a weak relationship.</li>
+        <li><strong>R² = 0.93 for age:</strong> 93% of the variation in salary is explained by the employee's age, which suggests a very strong relationship between age and salary.</li>
+    </ul>
+
+    <h3>Part 2: Can you make a better or worse prediction if you know the value of all three independent variables for a new employee versus just knowing the age? [2 marks]</h3>
+    <p><strong>Answer:</strong> While knowing all three variables would likely result in a better prediction due to the combination of information, the coefficients of determination suggest that age is the strongest predictor of salary (R² = 0.93). However, since we have not performed a multiple regression analysis that considers all three variables simultaneously, we cannot definitively say how much better the prediction would be compared to just using age alone. Multiple regression would allow us to account for the combined effects of all variables, potentially improving the accuracy of the prediction.</p>
+
+    <h3>Part 3: Does the result imply that age is the main cause of an employee’s salary level among the three variables studied? [2 marks]</h3>
+    <p><strong>Answer:</strong> The result does not imply causation, meaning we cannot conclude that age is the main cause of salary level. The high R² value for age (0.93) indicates a strong correlation, but correlation does not imply causation. There could be other underlying factors, such as length of employment or experience, that are closely related to age and affect salary. Regression analysis only shows relationships, not direct causes.</p>
+
+    <h2>Practice Question 1</h2>
+    <p><strong>What does a coefficient of determination (R²) of 0.8 indicate about a linear regression model?</strong></p>
+    <ul>
+        <li>80% of the variation in the dependent variable is explained by the independent variable.</li>
+        <li>There is no relationship between the dependent and independent variables.</li>
+        <li>The model has a perfect fit.</li>
+        <li>Only 20% of the data is useful for prediction.</li>
+    </ul>
+    <p><strong>Correct Answer:</strong> 80% of the variation in the dependent variable is explained by the independent variable.</p>
+    <div class="example">
+        <strong>Explanation:</strong> An R² value of 0.8 means that 80% of the variability in the outcome variable can be explained by the predictor variable, indicating a strong relationship.
+    </div>
+
+    <h2>Practice Question 2</h2>
+    <p><strong>If the coefficient of determination (R²) is close to 0, what does that imply about the model?</strong></p>
+    <ul>
+        <li>The model fits the data very well.</li>
+        <li>There is little to no linear relationship between the independent and dependent variables.</li>
+        <li>The model can be used for making reliable predictions.</li>
+        <li>The model has a high level of bias.</li>
+    </ul>
+    <p><strong>Correct Answer:</strong> There is little to no linear relationship between the independent and dependent variables.</p>
+    <div class="example">
+        <strong>Explanation:</strong> An R² value close to 0 indicates that the independent variable explains very little of the variation in the dependent variable, implying a poor fit.
+    </div>
+
+    <h2>Practice Question 3</h2>
+    <p><strong>Why is it important to remember that a high R² value does not imply causation?</strong></p>
+    <ul>
+        <li>A high R² value always indicates causation.</li>
+        <li>There may be underlying variables that affect both the independent and dependent variables.</li>
+        <li>R² measures prediction accuracy, not the strength of the relationship.</li>
+        <li>A low R² value always implies a strong relationship.</li>
+    </ul>
+    <p><strong>Correct Answer:</strong> There may be underlying variables that affect both the independent and dependent variables.</p>
+    <div class="example">
+        <strong>Explanation:</strong> Even if there is a high R² value, it does not imply that changes in the independent variable directly cause changes in the dependent variable. There could be other factors influencing the relationship.
+    </div>
+
+    <h2>Summary</h2>
+    <p>The coefficient of determination (R²) is a key metric in linear regression that indicates the proportion of variance in the dependent variable explained by the independent variable. However, a high R² value does not imply causation, and it's important to understand that regression models only show relationships, not direct causes.</p>
+</body>
+</html>

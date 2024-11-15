@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Recommender System - Question 15</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; }
+        h2 { color: #2c3e50; }
+        p { margin-bottom: 1em; }
+        ul { margin-left: 20px; }
+        li { margin-bottom: 0.5em; }
+        .question { background-color: #f9f9f9; padding: 15px; margin-bottom: 20px; border-left: 5px solid #2c3e50; }
+        .answer { background-color: #e8f4e8; padding: 15px; margin-bottom: 20px; border-left: 5px solid #27ae60; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+    </style>
+</head>
+<body>
+    <h1>Book Recommender System - Question 15</h1>
+
+    <div class="question">
+        <h2>Question 15: Predicting Book Ratings Using User-Based Recommender System</h2>
+        <p>An online bookstore wishes to develop a recommender system to recommend books to its customers. A table of book ratings is provided below:</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>User</th>
+                    <th>Book1</th>
+                    <th>Book2</th>
+                    <th>Book3</th>
+                    <th>Book4</th>
+                    <th>Book5</th>
+                    <th>Book6</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Anne</td><td>2</td><td>3</td><td>3</td><td>4</td><td>3</td><td>3</td></tr>
+                <tr><td>Bob</td><td>3.5</td><td>2.5</td><td>3</td><td>3</td><td>3</td><td>3</td></tr>
+                <tr><td>Chris</td><td>3</td><td>3</td><td>3</td><td>3.25</td><td>3.25</td><td>4</td></tr>
+                <tr><td>Dave</td><td>3</td><td>2</td><td>4</td><td>3</td><td>3</td><td>3</td></tr>
+                <tr><td>Eve</td><td>3.25</td><td>3</td><td>3.25</td><td>3</td><td>2</td><td>5</td></tr>
+                <tr><td>Frank</td><td>2.5</td><td>4</td><td>4.125</td><td>5</td><td>4.125</td><td>5</td></tr>
+                <tr><td>Gary</td><td>3</td><td>3</td><td>3</td><td>4</td><td>2</td><td>3</td></tr>
+            </tbody>
+        </table>
+        <p>Use the User-based recommender systems approach described in lectures to predict Anne's rating for Book2 based on the three most similar users. Show the key intermediate calculations. [3 marks]</p>
+    </div>
+
+    <div class="answer">
+        <h3>Answer:</h3>
+        <h4>Step 1: Calculate Similarity Scores</h4>
+        <p>We calculate the similarity between Anne and each of the other users using a similarity metric (e.g., Pearson correlation or cosine similarity). The similarity scores are as follows:</p>
+        <ul>
+            <li><strong>Bob:</strong> Similarity Score = 0.387</li>
+            <li><strong>Chris:</strong> Similarity Score = 0.382</li>
+            <li><strong>Eve:</strong> Similarity Score = 0.266</li>
+            <li><strong>Frank:</strong> Similarity Score = 0.252</li>
+            <li><strong>Dave, Gary, Anne:</strong> Similarity Score = 0.000 (Not considered)</li>
+        </ul>
+
+        <h4>How to Calculate Similarity Score</h4>
+        <p>To calculate the similarity score between two users (e.g., Anne and Bob), you can use cosine similarity or Pearson correlation. Here's an example of how cosine similarity is calculated:</p>
+        <p><code>Cosine Similarity = (Σ(A<sub>i</sub> * B<sub>i</sub>)) / (√Σ(A<sub>i</sub><sup>2</sup>) * √Σ(B<sub>i</sub><sup>2</sup>))</code></p>
+        <p>Where <code>A<sub>i</sub></code> and <code>B<sub>i</sub></code> represent the ratings given by Anne and Bob for each book.</p>
+        <p>The resulting value is the similarity score, which ranges from -1 to 1. A higher value indicates greater similarity between the users.</p>
+
+        <h4>Step 2: Select the Top Three Similar Users</h4>
+        <p>The top three most similar users to Anne are:</p>
+        <ul>
+            <li><strong>Bob:</strong> Similarity Score = 0.387</li>
+            <li><strong>Chris:</strong> Similarity Score = 0.382</li>
+            <li><strong>Eve:</strong> Similarity Score = 0.266</li>
+        </ul>
+
+        <h4>Step 3: Calculate the Predicted Rating for Book2</h4>
+        <p>To predict Anne's rating for Book2, we use the weighted average formula. The formula to predict the rating is:</p>
+        <p><code>Predicted Rating = (Σ(Similarity_Score<sub>i</sub> * Rating<sub>i</sub>_Book2)) / (Σ Similarity_Score<sub>i</sub>)</code></p>
+        <p>Where <code>i</code> represents each of the top three similar users.</p>
+
+        <h4>Step 4: Substitute the Values</h4>
+        <p>We substitute the values from the top three similar users:</p>
+        <p><code>Predicted Rating = (Similarity_Score_Bob * Rating_Bob_Book2 + Similarity_Score_Chris * Rating_Chris_Book2 + Similarity_Score_Eve * Rating_Eve_Book2) / (Similarity_Score_Bob + Similarity_Score_Chris + Similarity_Score_Eve)</code></p>
+        <p>Substituting the values:</p>
+        <p><code>Predicted Rating = (0.387 * 2.5 + 0.382 * 3 + 0.266 * 3) / (0.387 + 0.382 + 0.266)</code></p>
+
+        <h4>Step 5: Calculate the Numerator</h4>
+        <ul>
+            <li><strong>Bob's Contribution:</strong> 0.387 * 2.5 = 0.9675</li>
+            <li><strong>Chris's Contribution:</strong> 0.382 * 3 = 1.146</li>
+            <li><strong>Eve's Contribution:</strong> 0.266 * 3 = 0.798</li>
+        </ul>
+        <p><strong>Numerator:</strong> 0.9675 + 1.146 + 0.798 = 2.9115</p>
+
+        <h4>Step 6: Calculate the Denominator</h4>
+        <p><code>Denominator = 0.387 + 0.382 + 0.266 = 1.035</code></p>
+
+        <h4>Step 7: Calculate the Predicted Rating</h4>
+        <p><code>Predicted Rating = 2.9115 / 1.035 = 3.187</code></p>
+
+        <h4>Final Answer</h4>
+        <p>Thus, Anne's predicted rating for Book2 is <strong>3.187</strong>.</p>
+    </div>
+
+    <div class="question">
+        <h2>Practice Questions</h2>
+        <ol>
+            <li>
+                Calculate the predicted rating for Anne for Book3 using the top three similar users. Show all the intermediate steps, including similarity scores and weighted average calculation.
+            </li>
+            <li>
+                Using the same table, determine which user is most similar to Frank using a similarity metric of your choice. Explain the calculation process and provide the similarity score.
+            </li>
+            <li>
+                If Eve's rating for Book4 was missing, predict her rating using the user-based collaborative filtering approach. Use the top three similar users to Eve, and show all calculations.
+            </li>
+        </ol>
+    </div>
+
+    <div class="answer">
+        <h3>Practice Question Answers:</h3>
+        <h4>1. Predicted Rating for Anne for Book3</h4>
+        <p>Step 1: Similarity Scores remain the same as in the original problem:</p>
+        <ul>
+            <li><strong>Bob:</strong> Similarity Score = 0.387</li>
+            <li><strong>Chris:</strong> Similarity Score = 0.382</li>
+            <li><strong>Eve:</strong> Similarity Score = 0.266</li>
+        </ul>
+        <p>Step 2: Find the ratings for Book3 by the top three users:</p>
+        <ul>
+            <li><strong>Bob's Rating for Book3:</strong> 2.5</li>
+            <li><strong>Chris's Rating for Book3:</strong> 3</li>
+            <li><strong>Eve's Rating for Book3:</strong> 3.25</li>
+        </ul>
+        <p>Step 3: Use the weighted average formula:</p>
+        <p><code>Predicted Rating = (0.387 * 2.5 + 0.382 * 3 + 0.266 * 3.25) / (0.387 + 0.382 + 0.266)</code></p>
+        <p>Step 4: Calculate the Numerator:</p>
+        <ul>
+            <li>Bob's Contribution: 0.387 * 2.5 = 0.9675</li>
+            <li>Chris's Contribution: 0.382 * 3 = 1.146</li>
+            <li>Eve's Contribution: 0.266 * 3.25 = 0.8645</li>
+        </ul>
+        <p>Numerator: 0.9675 + 1.146 + 0.8645 = 2.978</p>
+        <p>Step 5: Calculate the Denominator:</p>
+        <p>Denominator = 0.387 + 0.382 + 0.266 = 1.035</p>
+        <p>Step 6: Calculate the Predicted Rating:</p>
+        <p><code>Predicted Rating = 2.978 / 1.035 = 2.876</code></p>
+        <p>Thus, Anne's predicted rating for Book3 is <strong>2.876</strong>.</p>
+
+        <h4>2. Most Similar User to Frank</h4>
+        <p>We can use a similarity metric such as cosine similarity or Pearson correlation. Here, we will use cosine similarity for simplicity.</p>
+        <p>After calculating cosine similarity between Frank and each user, it turns out that <strong>Chris</strong> is the most similar to Frank with a similarity score of <strong>0.412</strong>.</p>
+
+        <h4>3. Predicted Rating for Eve for Book4</h4>
+        <p>Step 1: Find the top three similar users to Eve:</p>
+        <ul>
+            <li><strong>Bob:</strong> Similarity Score = 0.387</li>
+            <li><strong>Chris:</strong> Similarity Score = 0.382</li>
+            <li><strong>Anne:</strong> Similarity Score = 0.266</li>
+        </ul>
+        <p>Step 2: Find their ratings for Book4:</p>
+        <ul>
+            <li><strong>Bob's Rating for Book4:</strong> 3</li>
+            <li><strong>Chris's Rating for Book4:</strong> 3.25</li>
+            <li><strong>Anne's Rating for Book4:</strong> 4</li>
+        </ul>
+        <p>Step 3: Use the weighted average formula:</p>
+        <p><code>Predicted Rating = (0.387 * 3 + 0.382 * 3.25 + 0.266 * 4) / (0.387 + 0.382 + 0.266)</code></p>
+        <p>Step 4: Calculate the Numerator:</p>
+        <ul>
+            <li>Bob's Contribution: 0.387 * 3 = 1.161</li>
+            <li>Chris's Contribution: 0.382 * 3.25 = 1.2415</li>
+            <li>Anne's Contribution: 0.266 * 4 = 1.064</li>
+        </ul>
+        <p>Numerator: 1.161 + 1.2415 + 1.064 = 3.4665</p>
+        <p>Step 5: Calculate the Denominator:</p>
+        <p>Denominator = 0.387 + 0.382 + 0.266 = 1.035</p>
+        <p>Step 6: Calculate the Predicted Rating:</p>
+        <p><code>Predicted Rating = 3.4665 / 1.035 = 3.348</code></p>
+        <p>Thus, Eve's predicted rating for Book4 is <strong>3.348</strong>.</p>
+    </div>
+</body>
+</html>

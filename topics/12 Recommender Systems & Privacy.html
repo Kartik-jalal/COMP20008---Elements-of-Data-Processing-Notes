@@ -1,0 +1,94 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COMP20008 - Recommender Systems & Privacy: Exam Notes</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; }
+        h2 { color: #2c3e50; }
+        p { margin-bottom: 1em; }
+        ul { margin-left: 20px; }
+        li { margin-bottom: 0.5em; }
+        .formula { background-color: #f4f4f4; padding: 10px; margin-bottom: 1em; }
+    </style>
+</head>
+<body>
+    <h1>COMP20008 - Recommender Systems & Privacy: Exam Notes</h1>
+
+    <h2>Recommender Systems</h2>
+    <p><strong>Recommender Systems:</strong> These systems are designed to suggest items to users based on their past behavior, preferences, or similarities with other users.</p>
+    <ul>
+        <li><strong>The Long Tail:</strong> Recommender systems help in utilizing niche items that would otherwise be overlooked, increasing overall sales.</li>
+    </ul>
+
+    <h2>Item-Based Collaborative Filtering</h2>
+    <p><strong>Item-Based Method:</strong> Items are recommended to users based on their similarity to items the user has previously rated highly.</p>
+    <ul>
+        <li><strong>Finding Similar Items:</strong> Calculate similarity between items using measures like Cosine Similarity.
+            <div class="formula">sim(x<sub>i</sub>, x<sub>j</sub>) = (x<sub>i</sub> · x<sub>j</sub>) / (||x<sub>i</sub>|| ||x<sub>j</sub>||)</div>
+        </li>
+        <li><strong>Example:</strong> For a user who likes movie A, a recommendation for movie B could be made if A and B are similar based on user ratings.</li>
+    </ul>
+
+    <h2>User-Based Collaborative Filtering</h2>
+    <p><strong>User-Based Method:</strong> Recommendations are made based on the similarity between users.</p>
+    <ul>
+        <li><strong>Dynamic Preferences:</strong> User preferences can change frequently, making it challenging to maintain up-to-date information.</li>
+        <li><strong>Sparsity Problem:</strong> Many users may rate only a few items, resulting in sparse data matrices.</li>
+        <li><strong>Example:</strong> A new user who has rated very few items might not get good recommendations due to a lack of sufficient information.</li>
+    </ul>
+
+    <h2>Privacy in Recommender Systems</h2>
+    <p><strong>Privacy Concerns:</strong> User data collected by recommender systems raises significant privacy concerns, especially if it involves sensitive information like browsing history or purchasing behavior.</p>
+    <ul>
+        <li><strong>Anonymization:</strong> Data can be anonymized to remove direct identifiers, though this does not always ensure full privacy.</li>
+        <li><strong>De-anonymization Risks:</strong> Linking anonymized data with publicly available data can lead to re-identification of individuals.</li>
+    </ul>
+
+    <h2>k-Anonymity and l-Diversity</h2>
+    <p><strong>k-Anonymity:</strong> A dataset satisfies k-anonymity if each record is indistinguishable from at least k-1 other records regarding the quasi-identifiers.</p>
+    <ul>
+        <li><strong>Generalization:</strong> Quasi-identifiers (e.g., ZIP code, age) are generalized to make them less specific.
+            <ul>
+                <li><strong>Example:</strong> Instead of storing an exact ZIP code (e.g., 94138), a generalized version like 9413* can be used.</li>
+            </ul>
+        </li>
+        <li><strong>Suppression:</strong> Some attributes may be suppressed entirely to achieve k-anonymity.</li>
+    </ul>
+    <p><strong>l-Diversity:</strong> Ensures that sensitive attributes within each group of indistinguishable records have at least l different values, providing additional privacy.
+        <ul>
+            <li><strong>Example:</strong> In a dataset of patient records, each group of records that share the same quasi-identifiers must have diverse values for sensitive attributes like medical conditions.</li>
+        </ul>
+    </p>
+
+    <h2>Protecting Survey Privacy</h2>
+    <p><strong>Survey Privacy Protection:</strong> Ensuring that individuals feel safe in participating in surveys involves privacy-preserving mechanisms.</p>
+    <ul>
+        <li><strong>Randomized Response:</strong> Introduce randomness in responses to ensure privacy while still obtaining valid aggregate information.</li>
+        <li><strong>Data Perturbation:</strong> Altering individual data points before sharing them to prevent identification while keeping aggregate results accurate.
+            <ul>
+                <li><strong>Example:</strong> Adding random noise to survey responses.</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h2>Location and Trajectory Privacy</h2>
+    <p><strong>Location Data:</strong> GPS data and trajectories can reveal sensitive information about an individual's movements, habits, and preferences.</p>
+    <ul>
+        <li><strong>Trajectory Data:</strong> A trajectory is a function mapping time to geographical space, often used for tracking movement.</li>
+        <li><strong>Privacy Concerns:</strong> Continuous monitoring of location data can lead to privacy violations if not adequately protected.</li>
+        <li><strong>Cloaking:</strong> Methods like spatial cloaking can be used to obscure the exact location by providing only approximate regions.</li>
+    </ul>
+
+    <h2>Summary</h2>
+    <p><strong>Maintaining Privacy:</strong> To reduce the risk of re-identification of individuals in released datasets:</p>
+    <ul>
+        <li>Make data k-anonymous using generalization or suppression.</li>
+        <li>Apply l-diversity to ensure sensitive attributes have diverse values within each group.</li>
+        <li>Use privacy-preserving mechanisms like randomized response and data perturbation.</li>
+    </ul>
+    <p>Continue to the next part of the notes for further exploration of recommender systems, privacy concerns, and advanced data protection techniques.</p>
+</body>
+</html>

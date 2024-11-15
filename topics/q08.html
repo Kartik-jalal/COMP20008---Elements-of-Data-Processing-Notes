@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COMP20008 - Pearson Correlation and Data Analysis: Exam Practice</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; }
+        h2 { color: #2c3e50; }
+        p { margin-bottom: 1em; }
+        ul { margin-left: 20px; }
+        li { margin-bottom: 0.5em; }
+        .formula { background-color: #f4f4f4; padding: 10px; margin-bottom: 1em; }
+        .example { background-color: #e8f4e8; padding: 10px; margin-bottom: 1em; }
+    </style>
+</head>
+<body>
+    <h1>COMP20008 - Pearson Correlation and Data Analysis: Exam Practice</h1>
+
+    <h2>Question 8</h2>
+    <p>Assume we want to understand why some apartments in Melbourne rent for more money than others. You have collected data for 200 apartments and their weekly rent. For each apartment, you have also collected 3 attributes, namely, the size of the apartment in square meters, the number of bedrooms in the apartment, and the house number of the street the apartment is in. We now want to use Pearson correlation coefficient between the rent and the 3 other attributes.</p>
+
+    <h3>Part 1: Briefly explain what the Pearson correlation coefficient is. [1 mark]</h3>
+    <p><strong>Answer:</strong> The Pearson correlation coefficient, also referred to as Pearson's r, is a statistic that measures linear correlation between two variables X and Y. It ranges from -1 to 1, where 1 indicates a perfect positive correlation, -1 indicates a perfect negative correlation, and 0 indicates no correlation at all.</p>
+
+    <h3>Part 2: Considering the 3 attributes (square meters, number of bedrooms, house number), please explain how reasonable it is to calculate the Pearson correlation coefficient for each one to understand the relationship with the weekly rent. [2 marks]</h3>
+    <p><strong>Answer:</strong> Square meters is a ratio feature, the number of bedrooms is an interval feature (with ordinal characteristics), and the house number is a nominal feature (with minor ordinal characteristics). Therefore, Pearson's r will be informative for square meters, as it is a continuous variable. It will also be reasonable for the number of bedrooms, though there may be ties, which Pearson correlation does not handle well. However, calculating Pearson's r for house numbers does not make sense, as house numbers are not a numerical feature with any meaningful linear relationship to rent.</p>
+
+    <h3>Part 3: Using KNN Clustering - Is it better or worse if additional attributes are highly correlated with the existing 3 attributes? [2 marks]</h3>
+    <p><strong>Answer:</strong> It is generally better to choose features that are not highly correlated with each other. Including attributes that are highly correlated with the existing 3 attributes could lead to overfitting, reducing the robustness of the model and making it less generalizable to new data. This is because redundant information can compound errors and lead to an overemphasis on certain relationships. Using non-correlated features should make the model more robust and reduce potential errors.</p>
+
+    <h2>Practice Question 1</h2>
+    <p><strong>Which of the following values of Pearson's correlation coefficient indicates the strongest relationship between two variables?</strong></p>
+    <ul>
+        <li>0.85</li>
+        <li>-0.95</li>
+        <li>0.5</li>
+        <li>-0.3</li>
+    </ul>
+    <p><strong>Correct Answer:</strong> -0.95</p>
+    <div class="example">
+        <strong>Explanation:</strong> A correlation coefficient of -0.95 indicates a very strong negative linear relationship, meaning as one variable increases, the other tends to decrease in a strong linear manner.
+    </div>
+
+    <h2>Practice Question 2</h2>
+    <p><strong>If Pearson's correlation coefficient between two variables is 0, what does that imply?</strong></p>
+    <ul>
+        <li>There is a perfect positive linear relationship between the variables.</li>
+        <li>There is no linear relationship between the variables.</li>
+        <li>The variables are independent of each other.</li>
+        <li>The variables have a perfect negative linear relationship.</li>
+    </ul>
+    <p><strong>Correct Answer:</strong> There is no linear relationship between the variables.</p>
+    <div class="example">
+        <strong>Explanation:</strong> A correlation coefficient of 0 indicates no linear relationship between the variables. However, they may still have a non-linear relationship that Pearson's r cannot capture.
+    </div>
+
+    <h2>Practice Question 3</h2>
+    <p><strong>Why is it not appropriate to use Pearson's correlation coefficient for categorical variables?</strong></p>
+    <ul>
+        <li>Because Pearson's r only measures linear relationships.</li>
+        <li>Because categorical variables cannot be ordered or have meaningful distances.</li>
+        <li>Because it can only be used for positive relationships.</li>
+        <li>Because it requires at least three variables.</li>
+    </ul>
+    <p><strong>Correct Answer:</strong> Because categorical variables cannot be ordered or have meaningful distances.</p>
+    <div class="example">
+        <strong>Explanation:</strong> Pearson's r measures the strength and direction of a linear relationship between continuous variables. Categorical variables do not have a natural order or meaningful distances, which makes Pearson's correlation inappropriate for such data types.
+    </div>
+
+    <h2>Summary</h2>
+    <p>The Pearson correlation coefficient is a measure of the linear relationship between two continuous variables, ranging from -1 to 1. It is suitable for interval and ratio variables but not for nominal or categorical data. When building models, it's important to avoid using highly correlated features to reduce overfitting and improve model robustness.</p>
+</body>
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy and Big Data Analysis - Questions 11 to 17</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; }
+        h2 { color: #2c3e50; }
+        p { margin-bottom: 1em; }
+        ul { margin-left: 20px; }
+        li { margin-bottom: 0.5em; }
+        .question { background-color: #f9f9f9; padding: 15px; margin-bottom: 20px; border-left: 5px solid #2c3e50; }
+        .answer { background-color: #e8f4e8; padding: 15px; margin-bottom: 20px; border-left: 5px solid #27ae60; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+    </style>
+</head>
+<body>
+    <h1>Privacy and Big Data Analysis - Questions 11 to 17</h1>
+
+    <div class="question">
+        <h2>Question 11: Maximum Value of k for Table 1 to be k-Anonymous</h2>
+        <p>What is the maximum value of k for which Table 1 is k-anonymous?</p>
+    </div>
+    <div class="answer">
+        <h3>Answer:</h3>
+        <p>The value of <code>k</code> in k-anonymity is determined by the smallest group of records that share the same quasi-identifiers. Based on the data in Table 1, the maximum value of <code>k</code> is <strong>3</strong>, since the smallest group that shares the same quasi-identifiers (postcode, year of birth) contains 3 rows.</p>
+    </div>
+
+    <div class="question">
+        <h2>Question 12: Maximum Value of l for Table 2 to be l-Diverse</h2>
+        <p>What is the maximum value of l for which Table 2 is l-diverse?</p>
+    </div>
+    <div class="answer">
+        <h3>Answer:</h3>
+        <p>To determine the value of <code>l</code> in l-diversity, we need to look at the diversity of sensitive attributes within each group of records sharing the same quasi-identifiers. In Table 2, the group with the least diverse set of conditions contains only <strong>3</strong> different conditions. Thus, the maximum value of <code>l</code> is <strong>3</strong>.</p>
+    </div>
+
+    <div class="question">
+        <h2>Question 13: Privacy Attack on Tables 1 and 2</h2>
+        <p>Describe a likely privacy attack that uses the information contained in Tables 1 & 2 to obtain the condition of a patient in the dataset. [3 marks]</p>
+    </div>
+    <div class="answer">
+        <h3>Answer:</h3>
+        <p>A privacy attack could involve linking information from both tables using quasi-identifiers such as postcode, year of birth, and nationality. Since both tables represent the same patients, an attacker could match the non-sensitive quasi-identifiers to identify unique individuals and infer their sensitive conditions. For instance:</p>
+        <ul>
+            <li>The attacker could use knowledge of a person's year of birth, nationality, and approximate location (postcode).</li>
+            <li>By linking the rows from both tables, the attacker could find a unique match and reveal the condition associated with that patient.</li>
+            <li>Such an attack is possible when quasi-identifiers in both tables are not sufficiently generalized, allowing for re-identification of individuals.</li>
+        </ul>
+    </div>
+
+    <div class="question">
+        <h2>Question 14: Facebook's Libra Cryptocurrency and Big Data</h2>
+        <p>Facebook collects and processes an enormous amount of data about its users. The introduction of Facebook's Libra cryptocurrency in 2019 led to speculation that Facebook was planning to enter the microfinance market whereby they would offer loans to individuals and small businesses. Discuss the benefits and risks to individuals and society of using Facebook data in this manner. Discuss how Zook’s '10 simple rules for responsible big data research' could be used to mitigate the risks you identify, making reference to at least 3 rules. [6 marks]</p>
+    </div>
+    <div class="answer">
+        <h3>Answer:</h3>
+        <h4>Benefits:</h4>
+        <ul>
+            <li><strong>Access to Credit:</strong> Using Facebook data could help individuals who lack traditional credit scores access loans, particularly benefiting small business owners and individuals in underserved communities.</li>
+            <li><strong>Personalized Loan Offers:</strong> By analyzing user data, Facebook could provide personalized loan offers that match the user's ability to repay.</li>
+            <li><strong>Efficiency in Microfinance:</strong> The use of data analytics can speed up the decision-making process for microloans, making the process more efficient and potentially reducing operational costs.</li>
+        </ul>
+        <h4>Risks:</h4>
+        <ul>
+            <li><strong>Privacy Concerns:</strong> The use of personal data for financial purposes raises concerns about data privacy, especially if users are not explicitly informed.</li>
+            <li><strong>Data Misuse:</strong> There is a risk that data could be used for purposes other than loan evaluation, such as targeted advertising or profiling.</li>
+            <li><strong>Bias and Discrimination:</strong> Facebook's algorithms could introduce biases that may lead to discriminatory lending practices, excluding certain groups from accessing loans.</li>
+        </ul>
+        <h4>Zook’s 10 Simple Rules for Responsible Big Data Research:</h4>
+        <ul>
+            <li><strong>Rule 2: Engage with the Broader Consequences of Your Work</strong> – Facebook should evaluate the broader societal consequences of using user data for lending, considering potential discrimination and privacy breaches.</li>
+            <li><strong>Rule 4: Protect and Respect the People Whose Data You Use</strong> – This rule emphasizes the need for data protection and privacy. Facebook must ensure that user consent is obtained, and data is used only for the intended purpose.</li>
+            <li><strong>Rule 8: Anticipate Misuses of Data</strong> – Facebook should anticipate and prevent potential misuse of personal data, such as using loan applicants' data for non-related targeted ads or disclosing it to third parties without consent.</li>
+        </ul>
+        <p>These three rules can help mitigate the privacy and ethical risks associated with using Facebook data for loans, ensuring data is handled responsibly and ethically.</p>
+    </div>
+
+    <div class="question">
+        <h2>Question 15: Ethical Implications of Data Sharing Between Companies</h2>
+        <p>Two companies decide to share customer data to provide more personalized services to their users. Discuss the ethical implications of such data sharing, both from the perspective of the companies and the customers. How can companies ensure that this data sharing is carried out responsibly? [5 marks]</p>
+    </div>
+    <div class="answer">
+        <h3>Answer:</h3>
+        <p><strong>Ethical Implications:</strong></p>
+        <ul>
+            <li><strong>Privacy Concerns:</strong> Customers may be unaware of how their data is being shared and used, leading to concerns over privacy and misuse of personal information.</li>
+            <li><strong>Trust Issues:</strong> The trust between customers and companies may be eroded if customers feel that their data is being used without explicit consent.</li>
+            <li><strong>Data Security:</strong> Sharing data increases the risk of data breaches, especially if either company lacks proper security measures.</li>
+        </ul>
+        <p>Companies can ensure responsible data sharing by obtaining clear consent from users, implementing strict data security protocols, and ensuring transparency in how the data will be used.</p>
+    </div>
+
+    <div class="question">
+        <h2>Question 16: Differential Privacy in Practice</h2>
+        <p>Explain the concept of differential privacy. Provide an example of how a company could implement differential privacy to protect user data when releasing aggregated statistics. [4 marks]</p>
+    </div>
+    <div class="answer">
+        <h3>Answer:</h3>
+        <p><strong>Differential Privacy:</strong> Differential privacy is a technique used to ensure that the inclusion or exclusion of a single individual's data does not significantly affect the outcome of data analysis. It provides a mathematical guarantee of privacy by adding noise to the data.</p>
+        <p><strong>Example:</strong> A company like a health organization could implement differential privacy when releasing aggregated statistics about patients. For instance, when publishing the average number of hospital visits, the company could add random noise to the count so that individual patient data cannot be re-identified while still providing useful insights at the population level.</p>
+    </div>
+
+    <div class="question">
+        <h2>Question 17: Ethical Risks of Predictive Policing</h2>
+        <p>Predictive policing uses algorithms to predict where crimes are likely to occur. Discuss the ethical risks associated with predictive policing and suggest ways to mitigate these risks. [5 marks]</p>
+    </div>
+    <div class="answer">
+        <h3>Answer:</h3>
+        <p><strong>Ethical Risks:</strong></p>
+        <ul>
+            <li><strong>Bias:</strong> Predictive policing algorithms may be biased, leading to disproportionate targeting of certain communities, particularly marginalized groups.</li>
+            <li><strong>Lack of Accountability:</strong> If an algorithm makes a wrong prediction, it can be difficult to determine who is accountable, which raises ethical concerns regarding transparency and fairness.</li>
+            <li><strong>Privacy Invasion:</strong> Predictive policing may involve the collection and analysis of large amounts of personal data, potentially infringing on individuals' privacy rights.</li>
+        </ul>
+        <p><strong>Mitigation Strategies:</strong></p>
+        <ul>
+            <li>Ensure transparency in how predictive policing algorithms are developed and used.</li>
+            <li>Regular audits of the algorithms to identify and reduce bias.</li>
+            <li>Involve community stakeholders in discussions about the deployment of predictive policing tools to build trust and accountability.</li>
+        </ul>
+    </div>
+
+    <h2>Tables:</h2>
+    <h3>Table 1:</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Non-sensitive</th>
+                <th></th>
+                <th>Sensitive</th>
+            </tr>
+            <tr>
+                <th>Postcode</th>
+                <th>Year of Birth</th>
+                <th>Nationality</th>
+                <th>Condition</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>300*</td><td>&lt;1990</td><td>*</td><td>Cancer</td></tr>
+            <tr><td>300*</td><td>&gt;1990</td><td>*</td><td>Heart Disease</td></tr>
+            <tr><td>300*</td><td>&lt;1990</td><td>*</td><td>Infection</td></tr>
+            <tr><td>300*</td><td>&gt;1990</td><td>*</td><td>Cancer</td></tr>
+            <tr><td>302*</td><td>&lt;1990</td><td>*</td><td>Heart Disease</td></tr>
+            <tr><td>302*</td><td>&gt;1990</td><td>*</td><td>Infection</td></tr>
+            <tr><td>302*</td><td>&lt;1990</td><td>*</td><td>Cancer</td></tr>
+            <tr><td>302*</td><td>&gt;1990</td><td>*</td><td>Cancer</td></tr>
+            <tr><td>300*</td><td>&lt;1990</td><td>*</td><td>Heart Disease</td></tr>
+            <tr><td>300*</td><td>&gt;1990</td><td>*</td><td>Infection</td></tr>
+            <tr><td>302*</td><td>&lt;1990</td><td>*</td><td>Infection</td></tr>
+            <tr><td>302*</td><td>&gt;1990</td><td>*</td><td>Heart Disease</td></tr>
+        </tbody>
+    </table>
+
+    <h3>Table 2:</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Non-sensitive</th>
+                <th></th>
+                <th>Sensitive</th>
+            </tr>
+            <tr>
+                <th>Postcode</th>
+                <th>Year of Birth</th>
+                <th>Nationality</th>
+                <th>Condition</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>*</td><td>&lt;1980</td><td>Australian</td><td>Cancer</td></tr>
+            <tr><td>*</td><td>&gt;1980</td><td>American</td><td>Heart Disease</td></tr>
+            <tr><td>*</td><td>&lt;1980</td><td>Australian</td><td>Infection</td></tr>
+            <tr><td>*</td><td>&gt;1980</td><td>American</td><td>Cancer</td></tr>
+            <tr><td>*</td><td>&gt;1980</td><td>American</td><td>Heart Disease</td></tr>
+            <tr><td>*</td><td>&gt;1980</td><td>American</td><td>Infection</td></tr>
+            <tr><td>*</td><td>&lt;1980</td><td>Australian</td><td>Cancer</td></tr>
+            <tr><td>*</td><td>&gt;1980</td><td>Chinese</td><td>Cancer</td></tr>
+            <tr><td>*</td><td>&lt;1980</td><td>Australian</td><td>Heart Disease</td></tr>
+            <tr><td>*</td><td>&gt;1980</td><td>American</td><td>Infection</td></tr>
+            <tr><td>*</td><td>&gt;1980</td><td>Chinese</td><td>Infection</td></tr>
+            <tr><td>*</td><td>&gt;1980</td><td>Chinese</td><td>Heart Disease</td></tr>
+        </tbody>
+    </table>
+</body>
+</html>

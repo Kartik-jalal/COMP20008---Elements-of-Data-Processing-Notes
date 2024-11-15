@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COMP20008 - Clustering & Dimensionality Reduction: Exam Notes</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; }
+        h2 { color: #2c3e50; }
+        p { margin-bottom: 1em; }
+        ul { margin-left: 20px; }
+        li { margin-bottom: 0.5em; }
+        .formula { background-color: #f4f4f4; padding: 10px; margin-bottom: 1em; }
+    </style>
+</head>
+<body>
+    <h1>COMP20008 - Clustering & Dimensionality Reduction: Exam Notes</h1>
+
+    <h2>Introduction to Clustering</h2>
+    <p><strong>Clustering:</strong> A technique used to group data points into clusters such that similar data points are grouped together while dissimilar points are in different clusters.</p>
+    <ul>
+        <li><strong>Inter-cluster Distance:</strong> Maximize distance between different clusters.</li>
+        <li><strong>Intra-cluster Distance:</strong> Minimize distance within a cluster.</li>
+    </ul>
+
+    <h2>K-means Clustering</h2>
+    <p><strong>K-means Algorithm:</strong> An iterative algorithm that divides data into K clusters by minimizing the variance within each cluster.</p>
+    <ul>
+        <li><strong>Steps:</strong>
+            <ol>
+                <li>Choose the number of clusters (K).</li>
+                <li>Randomly initialize K cluster centroids.</li>
+                <li>Assign each data point to the nearest centroid.</li>
+                <li>Recalculate the centroids based on the assigned points.</li>
+                <li>Repeat until convergence (i.e., centroids no longer change).</li>
+            </ol>
+        </li>
+    </ul>
+    <p><strong>Limitations:</strong> K-means is sensitive to the initial placement of centroids and may produce poor results if the clusters have different sizes or densities.</p>
+
+    <h2>Clustering-Based Outlier Detection</h2>
+    <p><strong>Outliers:</strong> Data points that do not fit well into any cluster are considered outliers. K-means can help in identifying these outliers by observing the points that remain far from any centroid.</p>
+
+    <h2>Visual Assessment of Cluster Tendency (VAT)</h2>
+    <p><strong>VAT Algorithm:</strong> A method to visually assess the cluster tendency in data by reordering the distance matrix and displaying it as a heatmap.</p>
+    <ul>
+        <li><strong>Goal:</strong> Reveal cluster structure by grouping similar objects together in the matrix.</li>
+        <li><strong>Example:</strong> Reordering a dissimilarity matrix can reveal four clusters along the diagonal, which appear as dark blocks in the VAT representation.</li>
+    </ul>
+
+    <h2>Hierarchical Clustering</h2>
+    <p><strong>Hierarchical Clustering:</strong> A clustering technique that builds a tree-like structure (dendrogram) to represent nested clusters.</p>
+    <ul>
+        <li><strong>Agglomerative Approach:</strong> Start with each point as its own cluster and iteratively merge the closest clusters until a single cluster (or desired number of clusters) remains.</li>
+        <li><strong>Divisive Approach:</strong> Start with all points in a single cluster and recursively split clusters until individual points are reached.</li>
+    </ul>
+    <p><strong>Linkage Criteria:</strong>
+        <ul>
+            <li><strong>Single Linkage (MIN):</strong> Merges clusters based on the shortest distance between points. Sensitive to noise.</li>
+            <li><strong>Complete Linkage (MAX):</strong> Merges clusters based on the longest distance between points. Less sensitive to noise.</li>
+        </ul>
+    </p>
+
+    <h2>Dimensionality Reduction</h2>
+    <p><strong>Dimensionality Reduction:</strong> The process of reducing the number of features in a dataset while retaining important information.</p>
+    <ul>
+        <li><strong>Feature Selection:</strong> Selecting a subset of the original features (e.g., scatter plots for the Iris dataset using 2 features out of 4).</li>
+        <li><strong>Feature Transformation:</strong> Transforming the original features into a new set of features, often with reduced dimensionality.
+            <ul>
+                <li>For example, <strong>Principal Component Analysis (PCA)</strong> can be used to reduce dimensionality by transforming data into a lower-dimensional space while preserving variance.</li>
+            </ul>
+        </li>
+    </ul>
+    <p><strong>Use Case:</strong> Reducing the dimensions of high-dimensional data makes it easier to visualize and can improve the performance of machine learning models by removing noise.</p>
+
+    <h2>Elbow Method for Determining Optimal Clusters</h2>
+    <p><strong>Elbow Method:</strong> A method used to determine the optimal number of clusters for K-means clustering.</p>
+    <ul>
+        <li>Plot the <strong>Sum of Squared Errors (SSE)</strong> for different values of K.</li>
+        <li>Look for the "elbow point" where the SSE curve starts to flatten, indicating the optimal number of clusters.</li>
+    </ul>
+    <p><strong>Example:</strong> If plotting SSE for K = 1 to 10 yields a curve that flattens at K = 3, then 3 is the optimal number of clusters.</p>
+
+    <p>Continue to the next part of the notes for further exploration of clustering methods, dimensionality reduction, and advanced visualization techniques.</p>
+</body>
+</html>
