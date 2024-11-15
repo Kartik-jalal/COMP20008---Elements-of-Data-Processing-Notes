@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COMP20008 - Elements of Data Processing Notes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            height: 100vh;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        .container {
+            display: flex;
+            width: 100%;
+        }
+
+        .sidebar {
+            width: 20%;
+            background-color: #ffffff;
+            border-right: 1px solid #ccc;
+            padding: 10px;
+            overflow-y: auto;
+        }
+
+        .sidebar h2 {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        .topics {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .topics li {
+            padding: 5px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        .topics li:hover {
+            background-color: #f1f1f1;
+        }
+
+        .highlight {
+            background-color: yellow;
+            font-weight: bold;
+        }
+
+        .content {
+            width: 80%;
+            padding: 20px;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <h2>Topics</h2>
+            <ul class="topics" id="topicsList">
+                <li onclick="loadTopic('./topics/01 Data Wrangling.html')">01 Data Wrangling</li><li onclick="loadTopic('./topics/02 Data Applications.html')">02 Data Applications</li><li onclick="loadTopic('./topics/03 Data Description & Visualization.html')">03 Data Description & Visualization</li><li onclick="loadTopic('./topics/04 Outliers & Visualization Techniques.html')">04 Outliers & Visualization Techniques</li><li onclick="loadTopic('./topics/05 Iris Dataset & Histograms.html')">05 Iris Dataset & Histograms</li><li onclick="loadTopic('./topics/06 Data Visualization & Handling Techniques.html')">06 Data Visualization & Handling Techniques</li><li class="highlight" onclick="loadTopic('./topics/06-revision Data Handling Visualization.html')">06-revision Data Handling Visualization</li><li onclick="loadTopic('./topics/07 Text Processing & Data Linkage.html')">07 Text Processing & Data Linkage</li><li onclick="loadTopic('./topics/08 Data Linkage, Hashing & Sales Prediction.html')">08 Data Linkage, Hashing & Sales Prediction</li><li onclick="loadTopic('./topics/09 Mutual Information, Entropy & Correlation.html')">09 Mutual Information, Entropy & Correlation</li><li class="highlight" onclick="loadTopic('./topics/09-revision Data Linkage and Hashing.html')">09-revision Data Linkage and Hashing</li><li onclick="loadTopic('./topics/10 Regression Analysis, Decision Trees.html')">10 Regression Analysis, Decision Trees</li><li onclick="loadTopic('./topics/11 Clustering & Dimensionality Reduction.html')">11 Clustering & Dimensionality Reduction</li><li onclick="loadTopic('./topics/12 Recommender Systems & Privacy.html')">12 Recommender Systems & Privacy</li><li class="highlight" onclick="loadTopic('./topics/12-revision ML Techniques.html')">12-revision ML Techniques</li><li onclick="loadTopic('./topics/13 Big Data & Privacy.html')">13 Big Data & Privacy</li><li class="highlight" onclick="loadTopic('./topics/Final Exam Revision Notes.html')">Final Exam Revision Notes</li><li onclick="loadTopic('./topics/q01.html')">q01</li><li onclick="loadTopic('./topics/q02.html')">q02</li><li onclick="loadTopic('./topics/q03.html')">q03</li><li onclick="loadTopic('./topics/q04.html')">q04</li><li onclick="loadTopic('./topics/q06.html')">q06</li><li onclick="loadTopic('./topics/q07.html')">q07</li><li onclick="loadTopic('./topics/q08.html')">q08</li><li onclick="loadTopic('./topics/q09.html')">q09</li><li onclick="loadTopic('./topics/q10.html')">q10</li><li onclick="loadTopic('./topics/q11.html')">q11</li><li onclick="loadTopic('./topics/q15.html')">q15</li>
+            </ul>
+        </div>
+        <div class="content">
+            <h1 id="contentHeader">COMP20008 - Elements of Data Processing Notes</h1>
+            <iframe id="contentFrame" src=""></iframe>
+        </div>
+    </div>
+
+    <script>
+        // Function to load the selected topic into the iframe
+        function loadTopic(file) {
+            document.getElementById('contentHeader').style.display = 'none'; // Hide the initial header
+            document.getElementById('contentFrame').src = file;
+        }
+    </script>
+</body>
+</html>
