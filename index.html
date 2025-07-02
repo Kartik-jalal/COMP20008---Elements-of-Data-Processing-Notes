@@ -4,66 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>COMP20008 - Elements of Data Processing Notes</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            height: 100vh;
-            background-color: #f8f9fa;
-            color: #333;
-        }
-
-        .container {
-            display: flex;
-            width: 100%;
-        }
-
-        .sidebar {
-            width: 20%;
-            background-color: #ffffff;
-            border-right: 1px solid #ccc;
-            padding: 10px;
-            overflow-y: auto;
-        }
-
-        .sidebar h2 {
-            font-size: 1.2em;
-            margin-bottom: 10px;
-        }
-
-        .topics {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        .topics li {
-            padding: 5px;
-            cursor: pointer;
-            border-radius: 4px;
-        }
-
-        .topics li:hover {
-            background-color: #f1f1f1;
-        }
-
-        .highlight {
-            background-color: yellow;
-            font-weight: bold;
-        }
-
-        .content {
-            width: 80%;
-            padding: 20px;
-        }
-
-        iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
@@ -78,13 +19,6 @@
             <iframe id="contentFrame" src=""></iframe>
         </div>
     </div>
-
-    <script>
-        // Function to load the selected topic into the iframe
-        function loadTopic(file) {
-            document.getElementById('contentHeader').style.display = 'none'; // Hide the initial header
-            document.getElementById('contentFrame').src = file;
-        }
-    </script>
 </body>
+<script src="script.js"></script>
 </html>
